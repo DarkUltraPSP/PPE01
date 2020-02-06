@@ -1,9 +1,10 @@
-<link rel="stylesheet" type="text/css" href="footer.css" media="all"/>
-<div class="footer">
-    <p>Image</p>  
-        <div>© <?php echo date("Y"); ?> Forum édité par Mathilde BOURINET , Gaspard BRISSET, Clément RAYSSIGUIER</div> 
-          
-   
+<link rel="stylesheet" type="text/css" href="css/footer.css" media="all"/>
+
+       <div class="footer">
+      
+            <div>© <?php echo date("Y"); ?> Forum édité par Mathilde BOURINET , Clément RAYSSIGUIER , Gaspard BRISSET .</div> 
+           
+      
  
         </div>   
        
