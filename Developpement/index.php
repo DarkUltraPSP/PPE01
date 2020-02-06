@@ -2,10 +2,12 @@
 <?php
 include_once("header.php")
 ?>
-<div>
+<link rel="stylesheet" type="text/css" href="css/index" media="all"/>
+
+<div class = "titre">
 	<p> Recherche sujet/auteur/message </p>
 </div>
-<div>
+<div class = "topic">
 	<table>
 		<tr>
 			<th> Topic </th> <th> Auteur </th>
@@ -15,6 +17,7 @@ include_once("header.php")
 		</tr>
 	</table
 <div>
+
 <?php
 include_once("footer.php")
 ?>
