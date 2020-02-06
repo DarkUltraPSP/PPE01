@@ -1,5 +1,6 @@
+  
 <?php
-include ("header.php")
+include_once("header.php")
 ?>
 <div>
 	<p> Recherche sujet/auteur/message </p>
@@ -15,5 +16,5 @@ include ("header.php")
 	</table
 <div>
 <?php
-include ("footer.php")
+include_once("footer.php")
 ?>
