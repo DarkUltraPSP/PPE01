@@ -17,7 +17,6 @@ include_once("header.php")
 		</tr>
 	</table
 <div>
-
 <?php
 include_once("footer.php")
 ?>

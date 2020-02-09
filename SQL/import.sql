@@ -1,22 +1,58 @@
 CREATE DATABASE PPE01;
+
 USE PPE01;
-CREATE TABLE Utilisateurs (idUtilisateurs INT AUTO_INCREMENT ,pseudo VARCHAR(64),motDePasse VARCHAR(64),dateNaissance DATE, sexe VARCHAR(64),email VARCHAR(64), bloque TINYINT ,idCommentaires INT ,PRIMARY KEY (idUtilisateurs));
 
-CREATE TABLE Sujets (idSujets INT AUTO_INCREMENT ,nomSujet VARCHAR(64),cheminPhoto VARCHAR (64), contenuSujet LONGTEXT , canRespond TINYINT , dateSujet DATE ,idUtilisateurs INT,PRIMARY KEY(idSujets));
+CREATE TABLE Utilisateur
+(
+idUtilisateur INT AUTO_INCREMENT,
+pseudo VARCHAR(64),
+password VARCHAR(64),
+dateNaissance DATE,
+cheminPhoto VARCHAR (64),
+sexe VARCHAR(64),
+mail VARCHAR(64),
+ban TINYINT,
+idCommentaire INT,
+PRIMARY KEY (idUtilisateur)
+ );
 
-CREATE TABLE Commentaires (idCommentaires INT AUTO_INCREMENT, contenuCommentaire LONGTEXT ,  dateCommentaire DATE ,idSujets INT ,PRIMARY KEY(idCommentaires));
+CREATE TABLE Sujet
+(
+idSujet INT AUTO_INCREMENT,
+nomSujet VARCHAR(64),
+contenuSujet LONGTEXT,
+canRespond TINYINT,
+dateSujet DATE,
+idUtilisateur INT,
+PRIMARY KEY(idSujet)
+);
 
-ALTER TABLE Utilisateurs 
-ADD CONSTRAINT Utilisateurs_idCommentaires
-FOREIGN KEY (idCommentaires)
-REFERENCES Commentaires (idCommentaires);
+CREATE TABLE Commentaire
+(
+idCommentaire INT AUTO_INCREMENT, 
+contenuCommentaire LONGTEXT,
+dateCommentaire DATE,
+idSujet INT,
+PRIMARY KEY(idCommentaire)
+);
 
-ALTER TABLE Commentaires
-ADD CONSTRAINT Commentaires_idSujets
-FOREIGN KEY (idSujets)
-REFERENCES Sujets (idSujets);
+ALTER TABLE Utilisateur
+ADD CONSTRAINT Utilisateur_idCommentaire
+FOREIGN KEY (idCommentaire)
+REFERENCES Commentaire (idCommentaire);
 
-ALTER TABLE Sujets
-ADD CONSTRAINT Sujets_idUtilisateurs
-FOREIGN KEY (idUtilisateurs)
-REFERENCES Utilisateurs (idUtilisateurs);
+ALTER TABLE Commentaire
+ADD CONSTRAINT Commentaire_idSujet
+FOREIGN KEY (idSujet)
+REFERENCES Sujet (idSujet);
+
+ALTER TABLE Sujet
+ADD CONSTRAINT Sujet_idUtilisateur
+FOREIGN KEY (idUtilisateur)
+REFERENCES Utilisateur (idUtilisateur);
+
+-- INSERT INTO Utilisateur (idUtilisateur, pseudo, password, dateNaissance, cheminPhoto, sexe, mail, ban) VALUES
+
+-- INSERT INTO Sujet (idSujet, nomSujet, contenuSujet canRespond, dateSujet) VALUES
+
+-- INSERT INTO Commentaire (idCommentaire, contenuCommentaire, dateCommentaire) VALUES
