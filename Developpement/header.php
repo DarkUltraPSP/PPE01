@@ -1,3 +1,12 @@
+<?php
+    include_once ("dataManager/dataBaseLinker.php");
+    include_once ("dataManager/CommentaireManager.php");
+    include_once ("dataManager/UsersManager.php");
+    include_once ("datamanager/SujetManager.php");
+    include_once ("data/Commentaire.php");
+    include_once ("data/Sujet.php");
+    include_once ("data/User.php");
+?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>

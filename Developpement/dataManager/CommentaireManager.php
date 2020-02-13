@@ -2,7 +2,7 @@
 
 class CommentaireManager {
    
-    public function findCommentaire($idCommentaire)
+    public static function findCommentaire($idCommentaire)
     {
         $commentary = new Commentaire();
         $login = DatabaseLinker::getConnexion();
@@ -20,7 +20,7 @@ class CommentaireManager {
         return $commentary;
     }
     
-    public function findAllCommentaire()
+    public static function findAllCommentaire()
     {
         $tabCom = [];
         $com = new Commentaire();
