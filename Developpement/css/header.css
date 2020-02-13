@@ -1,10 +1,10 @@
 .header
 {
-	position : fixed;
-	width : auto;
-	top : 0px;
-	right : 0px;
-	left : 0px;
-	font-size : #3D9CD2;
+	position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: #FFF;
+    background: #C1C1C1;
 	
 }
