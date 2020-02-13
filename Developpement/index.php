@@ -7,16 +7,9 @@ include_once("header.php")
 <div class = "titre">
 	<p> Recherche sujet/auteur/message </p>
 </div>
-<div class = "topic">
-	<table>
-		<tr>
-			<th> Topic </th> <th> Auteur </th>
-		</tr>
-		<tr>
-			<td></td><td></td>
-		</tr>
-	</table
-<div>
+<?php
+    print_r(CommentaireManager::findAllCommentaire());
+?>
 <?php
 include_once("footer.php")
 ?>

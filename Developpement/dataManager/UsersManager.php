@@ -2,7 +2,7 @@
 
 class UserManager 
 {
-    public function findUser($idUser)
+    public static function findUser($idUser)
     {
         $login = DatabaseLinker::getConnexion();
         $user = new Users();
@@ -22,7 +22,7 @@ class UserManager
             $user->setBan($lineResultat["ban"]);
         }
     }
-      public function  findAllUser()
+      public static function  findAllUser()
     {
        
         $tabUser = [];

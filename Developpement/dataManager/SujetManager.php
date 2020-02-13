@@ -2,7 +2,7 @@
 
 class TopicManager 
 {
-    public function findSujet($idSujet)
+    public static function findSujet($idSujet)
     {
         $subject = new Sujet();
         $login = DatabaseLinker::getConnexion();
@@ -20,7 +20,7 @@ class TopicManager
         }
         return $subject;
     }
-    public function  findAllSujet()
+    public static function  findAllSujet()
     {
         $tabSujet = [];
         $login = DatabaseLinker::getConnexion();
