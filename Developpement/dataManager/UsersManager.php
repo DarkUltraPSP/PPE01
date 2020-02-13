@@ -22,4 +22,22 @@ class UserManager
             $user->setBan($lineResultat["ban"]);
         }
     }
+      public function  findAllUser()
+    {
+       
+        $tabUser = [];
+        $login = DatabaseLinker::getConnexion();
+        $state = $login->prepare("SELECT * FROM User ");
+        $state -> execute();
+        $resultatsUser= $state ->fetchAll();
+        
+        foreach ($resultatsUser as $lineResultat)
+        {
+            $user = new Sujet();  
+            $user = UsersManager::findSujet ($lineResultat["idUtilisateur"]);
+          
+            $tabUser[]=$user;
+        }
+        return $tabUser;
+    }  
 }

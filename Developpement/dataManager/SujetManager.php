@@ -20,4 +20,22 @@ class TopicManager
         }
         return $subject;
     }
+    public function  findAllSujet()
+    {
+        $tabSujet = [];
+        $login = DatabaseLinker::getConnexion();
+        $state = $login->prepare("SELECT * FROM Sujet ");
+        $state -> execute();
+        $resultatsSujet= $state ->fetchAll();
+        
+        foreach ($resultatsSujet as $lineResultat)
+        {
+            $subject = new Sujet();  
+            $subject = SujetManager::findSujet ($lineResultat["idSujet"]);
+          
+            $tabSujet[]=$subject;
+        }
+        return $tabSujet;
+        
+    }
 }
