@@ -18,7 +18,7 @@
     </head>
     <body>
         <div class = "entete">
-                <div class = "titreEntete">
-                        <p>BANNIERE</p>
-                </div>
+            <div class = "titreEntete">
+                <p>BANNIERE</p>
+            </div>
         </div>
