@@ -28,9 +28,10 @@ class CommentaireManager {
         $state = $login->prepare("SELECT * FROM Sujet");
         $state->execute();
         $resultat = $state->fetchAll();
-        foreach ($resulat as $lineResultat)
+        
+        foreach ($resultat as $lineResultat)
         {
-            $com = CommentaireManager::findCommentaire("idCommentaire");
+            $com = Commentairemanager::findCommentaire($lineResultat["idCommentaire"]);
             $tabCom[] = $com;
         }
     }
