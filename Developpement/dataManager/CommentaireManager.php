@@ -22,6 +22,7 @@ class CommentaireManager {
     
     public function findAllCommentaire()
     {
+        $tabCom = [];
         $com = new Commentaire();
         $login = DatabaseLinker::getConnexion();
         $state = $login->prepare("SELECT * FROM Sujet");
@@ -29,8 +30,8 @@ class CommentaireManager {
         $resultat = $state->fetchAll();
         foreach ($resulat as $lineResultat)
         {
-            $tabCom = [];
-            $com = 
+            $com = CommentaireManager::findCommentaire("idCommentaire");
+            $tabCom[] = $com;
         }
     }
 }
