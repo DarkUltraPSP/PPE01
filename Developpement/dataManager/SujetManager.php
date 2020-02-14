@@ -36,6 +36,5 @@ class TopicManager
             $tabSujet[]=$subject;
         }
         return $tabSujet;
-        
     }
 }
