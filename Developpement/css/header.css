@@ -1,5 +1,6 @@
 .entete
 {
+	position:fixed;
     top:0;
     width:100%;
 	height:60px;
@@ -9,6 +10,7 @@
     color: #FFF;
     background:#C1C1C1;
 	margin-bottom : 2px;
+	text-align: center;
 }
 .titreEntete
 {
