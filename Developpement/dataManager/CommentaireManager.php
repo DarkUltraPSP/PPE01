@@ -31,8 +31,9 @@ class CommentaireManager {
         
         foreach ($resultat as $lineResultat)
         {
-            $com = Commentairemanager::findCommentaire($lineResultat["idCommentaire"]);
+            $com = CommentaireManager::findCommentaire($lineResultat["idCommentaire"]);
             $tabCom[] = $com;
         }
+        return $tabCom;
     }
 }
