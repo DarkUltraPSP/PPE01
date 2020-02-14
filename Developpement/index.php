@@ -1,13 +1,18 @@
   
 <?php
-include_once("header.php")
+include_once "header.php";
 ?>
 
 <?php
     DatabaseLinker::getConnexion();
+    $sujets = SujetManager::findAllSujet();
     
+    foreach ($sujets as $sujet)
+    {
+        echo $sujet->getTitre();
+    }
     echo "<pre>";
-    print_r(CommentaireManager::findAllCommentaire());
+    print_r(UsersManager::findAllUser());
     echo "</pre>";
 ?>
 

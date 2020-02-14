@@ -7,10 +7,10 @@ class CommentaireManager {
         $commentary = new Commentaire();
         $login = DatabaseLinker::getConnexion();
         $state = $login->prepare("SELECT * FROM Sujet WHERE idCommentaire = ?");
-        $state = bindParam(1, $idCommentaire);
-        $state-> execute();
+        $state->bindParam(1, $idCommentaire);
+        $state->execute();
         $resultat = $state->fetchAll();
-        foreach ($resulat as $lineResultat)
+        foreach ($resultat as $lineResultat)
         {
             $commentary->setIdCommentaire($lineResultat["idCommentaire"]);
             $commentary->setContenuCommmentaire($lineResultat["contenuCommentaire"]);
@@ -24,12 +24,11 @@ class CommentaireManager {
     {
         $tabCom = [];
         $com = new Commentaire();
-        $login = DatabaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Sujet");
+        $login = dataBaseLinker::getConnexion();
+        $state = $login->prepare("SELECT * FROM Commentaire");
         $state->execute();
-        $resultat = $state->fetchAll();
-        
-        foreach ($resultat as $lineResultat)
+        $resultats = $state->fetchAll();
+        foreach($resultats as $lineResultat)
         {
             $com = CommentaireManager::findCommentaire($lineResultat["idCommentaire"]);
             $tabCom[] = $com;

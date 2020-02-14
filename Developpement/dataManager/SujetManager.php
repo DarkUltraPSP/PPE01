@@ -1,16 +1,16 @@
 <?php
 
-class TopicManager 
+class SujetManager 
 {
     public static function findSujet($idSujet)
     {
         $subject = new Sujet();
         $login = DatabaseLinker::getConnexion();
         $state = $login->prepare("SELECT * FROM Sujet WHERE idSujet = ?");
-        $state = bindParam(1, $idSujet);
+        $state->bindParam(1, $idSujet);
         $state-> execute();
         $resultat = $state -> fetchAll();
-        foreach ($resulat as $lineResultat)
+        foreach ($resultat as $lineResultat)
         {
             $subject-> setIdSujet ($lineResultat["idSujet"]);
             $subject-> setNomSujet ($lineResultat["nomSujet"]);
@@ -20,10 +20,11 @@ class TopicManager
         }
         return $subject;
     }
-    public static function  findAllSujet()
+    
+    public static function findAllSujet()
     {
         $tabSujet = [];
-        $login = DatabaseLinker::getConnexion();
+        $login = dataBaseLinker::getConnexion();
         $state = $login->prepare("SELECT * FROM Sujet ");
         $state -> execute();
         $resultatsSujet= $state ->fetchAll();

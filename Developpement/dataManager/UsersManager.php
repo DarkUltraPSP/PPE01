@@ -1,13 +1,13 @@
 <?php
 
-class UserManager 
+class UsersManager 
 {
     public static function findUser($idUser)
     {
         $login = DatabaseLinker::getConnexion();
         $user = new Users();
         $state = $login->prepare("SELECT * FROM Sujet WHERE idUser = ?");
-        $state = bindParam(1, $idUser);
+        $state->bindParam(1, $idUser);
         $state-> execute();
         $resultat = $state -> fetchAll();
         foreach ($resultat as $lineResultat)
@@ -21,12 +21,14 @@ class UserManager
             $user->setMail($lineResultat["mail"]);
             $user->setBan($lineResultat["ban"]);
         }
+        return $user;
     }
-      public static function  findAllUser()
+    
+      public static function findAllUser()
     {
        
         $tabUser = [];
-        $login = DatabaseLinker::getConnexion();
+        $login = dataBaseLinker::getConnexion();
         $state = $login->prepare("SELECT * FROM User ");
         $state -> execute();
         $resultatsUser= $state ->fetchAll();
@@ -34,8 +36,7 @@ class UserManager
         foreach ($resultatsUser as $lineResultat)
         {
             $user = new Sujet();  
-            $user = UsersManager::findSujet ($lineResultat["idUtilisateur"]);
-          
+            $user = UsersManager::findSujet($lineResultat["idUtilisateur"]);
             $tabUser[]=$user;
         }
         return $tabUser;
