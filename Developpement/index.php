@@ -13,15 +13,15 @@ include_once "header.php";
     foreach ($sujets as $sujet)
     {
         echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
-        echo "<div class='Date'>".$sujet->getDateSujet()."</div>";
-        echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
         foreach ($users as $user)
         {
             if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
             {
-                echo $user->getPseudo();
+                echo "Ecrit par : ".$user->getPseudo();
             }
         }
+        echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
+        echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
         
         foreach ($commentaires as $commentaire)
         {

@@ -21,18 +21,4 @@ class CommentaireManager {
         return $commentary;
     }
     
-    public static function findAllCommentaire()
-    {
-        $tabCom = [];
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Commentaire");
-        $state -> execute();
-        $resultats = $state->fetchAll();
-        foreach($resultats as $lineResultat)
-        {
-            $com = CommentaireManager::findCommentaire($lineResultat["idCommentaire"]);
-            $tabCom[] = $com;
-        }
-        return $tabCom;
-    }
 }

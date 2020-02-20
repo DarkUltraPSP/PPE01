@@ -17,6 +17,7 @@ class SujetManager
             $subject->setContenuSujet($lineResultat["contenuSujet"]);
             $subject->setCanRespond($lineResultat["canRespond"]);
             $subject->setDateSujet($lineResultat["dateSujet"]);
+            $subject->setIdUtilisateur($lineResultat["idUtilisateur"]);
         }
         return $subject;
     }
