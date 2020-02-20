@@ -1,4 +1,16 @@
+body
+{
+    margin: 0px;
+    background-color: #ebebeb;
+}
+
 .titre
 {
     font-size: 30px;
+}
+
+.Commentaire
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }

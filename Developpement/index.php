@@ -3,6 +3,9 @@
 include_once "header.php";
 ?>
 
+<div class="Recherche">
+    Search::search();
+</div>
 <?php
     DatabaseLinker::getConnexion();
     
@@ -17,25 +20,27 @@ include_once "header.php";
         {
             if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
             {
-                echo "Ecrit par : ".$user->getPseudo();
+                echo "<h>Ecrit par :".$user->getPseudo()."</h>";
             }
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
         echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
-        
+?>
+<div class="Commentaire">
+<?php
         foreach ($commentaires as $commentaire)
         {
             foreach ($users as $user)
             {
                 if ($user->getIdUtilisateur() == $commentaire->getidUtilisateur())
-                    echo "<div class='NomSujet'><p>".$user->getPseudo()."</p></div>";
+                    echo "<div class='NomSujet'><h> Ecrit par : ".$user->getPseudo()."</h></div>";
             }
-            echo "<div class='Date'>".$commentaire->getDateCommentaire()."</div>";
+            echo "<div class='Date'><h>".$commentaire->getDateCommentaire()."</h></div>";
             echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
         }
     }
 ?>
-
+</div>
 <?php
 include_once("footer.php")
 ?>
