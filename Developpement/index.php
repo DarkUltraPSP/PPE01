@@ -15,6 +15,13 @@ include_once "header.php";
         echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
         echo "<div class='Date'>".$sujet->getDateSujet()."</div>";
         echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
+        foreach ($users as $user)
+        {
+            if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
+            {
+                echo $user->getPseudo();
+            }
+        }
         
         foreach ($commentaires as $commentaire)
         {
@@ -27,7 +34,6 @@ include_once "header.php";
             echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
         }
     }
-    
 ?>
 
 <?php
