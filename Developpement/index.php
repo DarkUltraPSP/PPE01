@@ -8,7 +8,7 @@ include_once "header.php";
     
     $sujets = SujetManager::findAllSujet();
     $commentaires = SujetManager::getCommentaire();
-    $user = SujetManager::getUser();
+    $users = SujetManager::getUser();
     
     foreach ($sujets as $sujet)
     {
@@ -18,23 +18,15 @@ include_once "header.php";
         
         foreach ($commentaires as $commentaire)
         {
-            /*if ($commentaire->getIdUtilisateur() == $user->getIdUtilisateur())
+            foreach ($users as $user)
             {
-                echo "<div class='NomSujet'><p>".$user->getPseudo()."</p></div>";
-            }*/
-            echo "<div class='NomSujet'><p>".$commentaire->getIdUtilisateur()."</p></div>";
+                if ($user->getIdUtilisateur() == $commentaire->getidUtilisateur())
+                    echo "<div class='NomSujet'><p>".$user->getPseudo()."</p></div>";
+            }
             echo "<div class='Date'>".$commentaire->getDateCommentaire()."</div>";
             echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
         }
     }
-    
-    echo "<pre>";
-    print_r(SujetManager::getCommentaire());
-    echo "</pre>";
-    
-    echo "<pre>";
-    print_r(UsersManager::findAllUser());
-    echo "</pre>";
     
 ?>
 

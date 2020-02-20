@@ -49,7 +49,7 @@ class SujetManager
         
         foreach($resultats as $lineResultat)
         {
-            $user = UsersManager::findUser($lineResultat["idUtilisateur"]);
+            $users = UsersManager::findUser($lineResultat["idUtilisateur"]);
             $tabUser[] = $users;
         }
         return $tabUser;
