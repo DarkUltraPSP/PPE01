@@ -6,6 +6,7 @@ class Commentaire
     private $contenuCommmentaire;
     private $dateCommentaire;
     private $idArticle;
+    private $idUtilisateur;
     
     function getIdCommentaire() {
         return $this->idCommentaire;
@@ -21,6 +22,10 @@ class Commentaire
 
     function getIdArticle() {
         return $this->idArticle;
+    }
+
+    function getIdUtilisateur() {
+        return $this->idUtilisateur;
     }
 
     function setIdCommentaire($idCommentaire) {
@@ -39,6 +44,9 @@ class Commentaire
         $this->idArticle = $idArticle;
     }
 
+    function setIdUtilisateur($idUtilisateur) {
+        $this->idUtilisateur = $idUtilisateur;
+    }
 
 
 }

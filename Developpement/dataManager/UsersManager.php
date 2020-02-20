@@ -5,8 +5,8 @@ class UsersManager
     public static function findUser($idUser)
     {
         $login = DatabaseLinker::getConnexion();
-        $user = new Users();
-        $state = $login->prepare("SELECT * FROM Sujet WHERE idUser = ?");
+        $user = new User();
+        $state = $login->prepare("SELECT * FROM Utilisateur WHERE idUtilisateur = ?");
         $state->bindParam(1, $idUser);
         $state-> execute();
         $resultat = $state -> fetchAll();
@@ -14,7 +14,7 @@ class UsersManager
         {
             $user->setIdUtilisateur($lineResultat["idUtilisateur"]);
             $user->setPseudo($lineResultat["pseudo"]);
-            $user->setMotDePasse($lineResultat["motDePasse"]);
+            $user->setMotDePasse($lineResultat["password"]);
             $user->setDateNaissance($lineResultat["dateNaissance"]);
             $user->setCheminPhoto($lineResultat["cheminPhoto"]);
             $user->setSexe($lineResultat["sexe"]);
@@ -26,17 +26,16 @@ class UsersManager
     
       public static function findAllUser()
     {
-       
         $tabUser = [];
+        $user = new Sujet();  
         $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM User ");
-        $state -> execute();
-        $resultatsUser= $state ->fetchAll();
+        $state = $login->prepare("SELECT * FROM Utilisateur");
+        $state->execute();
+        $resultatsUser=$state->fetchAll();
         
         foreach ($resultatsUser as $lineResultat)
         {
-            $user = new Sujet();  
-            $user = UsersManager::findSujet($lineResultat["idUtilisateur"]);
+            $user = UsersManager::findUser($lineResultat["idUtilisateur"]);
             $tabUser[]=$user;
         }
         return $tabUser;
