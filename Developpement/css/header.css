@@ -5,6 +5,8 @@
     justify-content: space-between;
     height: 100px;
     background-image : url(https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-simple-technology-forum-general-background-material-image_208058.jpg);
+    background-color: #007cff;
+    flex-wrap: wrap;
 }
 
 .nomForum

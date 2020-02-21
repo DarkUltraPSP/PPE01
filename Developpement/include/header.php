@@ -22,7 +22,7 @@
             <img src="image/logo.png" class="logo">
             <p class="nomForum"> Nom du Forum </p>
             <div class="boutonPosition">
-                <a href=""><input type="button" value="Connexion" class="bouton"/></a>
+                <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
                 <a href=""><input type="button" value="Inscription" class="bouton"/></a>
             </div>
         </div>
