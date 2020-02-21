@@ -12,7 +12,6 @@ include_once "include/header.php";
         $sujets = SujetManager::findAllSujet();
         $commentaires = SujetManager::getCommentaire();
         $users = SujetManager::getUser();
-
         foreach ($sujets as $sujet)
         {
             echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
@@ -28,26 +27,30 @@ include_once "include/header.php";
             ?>
         <div class="Commentaire">
             <?php
-            foreach ($commentaires as $commentaire)
+            foreach ($commentaires as $commentaire) 
             {
-                foreach ($users as $user)
+                if ($commentaire->getIdArticle() == $sujet->getIdSujet())
                 {
-                    if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
+                    foreach ($users as $user)
                     {
-                        echo "<h>Ecrit par :".$user->getPseudo()."</h>";
+                        if ($user->getIdUtilisateur() == $commentaire->getidUtilisateur())
+                        {
+                            echo "<div class='NomSujet'><h> Ecrit par : ".$user->getPseudo()."</h></div>";
+                        }
                     }
+                    echo "<div class='Date'><h>".$commentaire->getDateCommentaire()."</h></div>";
+                    echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
                 }
-                echo "<div class='Date'> <h>Publié le : </h>".$commentaire->getDateCommentaire()."</div>";
-                echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
             }
         }
 ?>
         </div>
     </div>
-    <div class="Gauche">
-        <img src="image/pub" alt="" class="apex" />
-        <img src="image/pub2" alt="" class="switch" />
-    </div>
+</div>
+<div class="Gauche">
+    <img src="image/pub" alt="" class="apex" />
+    <img src="image/pub2" alt="" class="switch" />
+</div>
 </div>
 <?php
 include_once "include/footer.php";
