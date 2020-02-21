@@ -1,5 +1,5 @@
 <?php
-        $_POST["Recherche"];
+        //$_POST["Recherche"];
         /*try 
         {
             
@@ -8,7 +8,7 @@
         {
 
         }*/
-        echo $_POST["Recherche"];
+        // $_POST["Recherche"];
 
 
 ?>
