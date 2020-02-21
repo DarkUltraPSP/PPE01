@@ -1,0 +1,12 @@
+.block
+{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    width: 60%;
+}
+
+.lateral
+{
+    width: 20%;
+}
