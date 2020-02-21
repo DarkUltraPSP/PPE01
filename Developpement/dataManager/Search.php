@@ -1,4 +1,9 @@
 <?php
+
+class Search 
+{
+    public static function research()
+    {
         $_POST["Recherche"];
         /*try 
         {
@@ -9,6 +14,7 @@
 
         }*/
         echo $_POST["Recherche"];
-
+    }
+}
 
 ?>
