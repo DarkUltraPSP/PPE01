@@ -31,5 +31,15 @@
                
         }
         return $codeRetour;
-        
-    }       
+      
+    } 
+    
+?>
+    <form method="POST" action="Connexion.php">
+     <a href="index.php"><input type="button" value="Retour" class="bouton"/></a>
+    </form> 
+
+
+<?php
+
+?>
