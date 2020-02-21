@@ -14,3 +14,31 @@ body
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.Droit
+{
+    width:20%;
+    heigth:100%;
+    
+    background-color: blue;
+    flex-wrap:wrap;
+}
+.Milieu
+{
+    width:60%;
+    heigth:100%;
+    flex-wrap:wrap;
+    margin:10px;
+}
+.Gauche
+{
+    width:20%;
+    heigth:100%;
+    background-color:red;
+    justify-content: flex-end;
+    flex-wrap:wrap;
+}
+.Organisation
+{
+    justify-content: center;
+    display:flex;
+}
