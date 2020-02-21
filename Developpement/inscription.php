@@ -1,99 +1,124 @@
 <?php
+    include_once("include/header.php");
 ?>
-<?php
-    function testPseudo ($pseudo)
-    {
-        $pseudoAdmin ="admin";
-        
-        
-         $codeRetour = false;
-        
-        if($pseudo!==$pseudoAdmin )
+<div class="Organisation">
+    <div class="Droit">
+        <p>Droit</p>        
+    </div>
+    <div class="Milieu">
+    <?php
+        function testPseudo ($pseudo)
         {
-            $codeRetour = true; 
-            
-               
-        }
-        return $codeRetour;
-        
-    }
-    
-    function testemail ($email,$emailConfirmation)
-    {
-        $emailAdmin ="admin@";
-       
-        
-         $codeRetour = false;
-        
-        if ($emailConfirmation==$email)
-        {
-            
-            if($email!==$emailAdmin)
+            $pseudoAdmin ="admin";
+
+
+             $codeRetour = false;
+
+            if($pseudo!==$pseudoAdmin )
             {
                 $codeRetour = true; 
-            
+
+
             }
-        return $codeRetour;
+            return $codeRetour;
+
         }
-        
-    }
-    function testPassword ($password,$PasswordConfirmation)
-    {
-        $passwordAdmin ="admin";
-       
-        
-         $codeRetour = false;
-        
-        if ($password==$PasswordConfirmation)
+
+        function testemail ($email,$emailConfirmation)
         {
-            
-            if($password!==$passwordAdmin)
+            $emailAdmin ="admin@";
+
+
+             $codeRetour = false;
+
+            if ($emailConfirmation==$email)
             {
-                $codeRetour = true; 
-            
+
+                if($email!==$emailAdmin)
+                {
+                    $codeRetour = true; 
+
+                }
+            return $codeRetour;
             }
-        return $codeRetour;
+
         }
-        
-    }
-    
-   
-?>
+        function testPassword ($password,$PasswordConfirmation)
+        {
+            $passwordAdmin ="admin";
 
-    <div class = "nom_Prenom">
+
+             $codeRetour = false;
+
+            if ($password==$PasswordConfirmation)
+            {
+
+                if($password!==$passwordAdmin)
+                {
+                    $codeRetour = true; 
+
+                }
+            return $codeRetour;
+            }
+
+        }
+
+
+    ?>
+
+        <div class = "Prenom">
+            <p>Prenom: </p>
+            <input type="text" name="prenom" value="" />
+        </div>
+
+        <div class="Nom">
+            <p>Nom: </p>
+            <input type="text" name="nom" value="" />
+        </div>
         
+        
+    <?php
+
+    ?>
+        <div class = "genre">
+            <p>Pseudo: </p>
+            <input type ="text"/>
+            <p>Sexe: </p>
+            <select>
+                <option>Homme</option> 
+                <option>Femme</option> 
+            <select/>     
+        </div>
+        
+        <div class="adresse">
+            <p>Adresse e-mail: </p>
+            <input type="text" name="adresse" value="" />
+        </div>
+        
+        <div class="mdp">
+            <p>Choisir un mot de passe:</p>
+            <input type="text" name="mdp" value="" />
+        </div>
+        
+        <div class="mdpconfirmation">
+            <p>Confirmation du mot de passe: </p>
+            <input type="text" name="mdpconfirmation" value="" />
+        </div>
+
+        
+
         <form method="POST" action="inscription.php">
-        <input type ="<?php $pseudo ?>"/>
-        
-        <input type="submit" value="Connexion" class="button_connexion">
-        <input type ="text"/>
-        </form>
-    </div>
-<?php
-
-?>
-    <div class = "pseudo_genre">
-        <input type ="text"/>
-        <select>
-            <option>Homme</option> 
-            <option>Femme</option> 
-            <option>Autre</option> 
-        <select/>
-        
-    </div>
-
-    <div class = "email">
-       
-        <form method="POST" action="inscription.php">
-        <input type ="<?php $email ?>"/>
-        <input type ="<?php $emailConfirmation ?>"/>
-       
-        
-        <input type ="<?php $password ?>"/>
-        <input type ="<?php $passwordConfirmation ?>"/>
-       
+  
         <input type="submit" value="Confirmer" class="button_connexion">
-        
+
         </form>
 
+        </div>
     </div>
+</div>
+    <div class="Gauche">
+        
+    </div>
+<?php
+include_once ("include/footer.php");
+?>
