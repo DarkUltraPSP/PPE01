@@ -1,9 +1,10 @@
   
 <?php
-include_once "header.php";
+include_once "include/header.php";
 ?>
 
 <?php
+
     DatabaseLinker::getConnexion();
     
     $sujets = SujetManager::findAllSujet();
@@ -22,6 +23,13 @@ include_once "header.php";
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
         echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
+
+    // DatabaseLinker::getConnexion();
+    // echo "<pre>";
+    // print_r(CommentaireManager::findAllCommentaire());
+    // echo "</pre>";
+
+
 ?>
 <div class="Commentaire">
 <?php
@@ -41,5 +49,5 @@ include_once "header.php";
 ?>
 </div>
 <?php
-include_once("footer.php")
+include_once("include/footer.php")
 ?>
