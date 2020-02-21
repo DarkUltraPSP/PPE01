@@ -27,9 +27,7 @@
             </div>
         </div>
         <div class="Recherche">
-            <div class="center">
                 <form method="POST" action="Search.php">
-            </div>
                 <input type="text" name="Recherche"/>
                 <SELECT name="TypeRecherche" size="1">
                     <option> Sujet
