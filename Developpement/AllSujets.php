@@ -9,9 +9,9 @@ $sujets = SujetManager::findAllSujet();
 $commentaires = SujetManager::getCommentaire();
 $users = SujetManager::getUser();
 ?>
-<div>
+<div class="Orga">
     <div class="lateral">
-
+        <h>C'est la pub</h>
     </div>
     <div class="block">
         <?php
@@ -30,7 +30,7 @@ $users = SujetManager::getUser();
         ?>
     </div>
     <div class="lateral">
-
+        <h>C'est la pub</h>
     </div>
 </div>
 <?php

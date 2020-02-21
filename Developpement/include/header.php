@@ -36,5 +36,5 @@
                 </SELECT>
                 <input type="submit" value="Rechercher">
             </form>
-          
+            <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
         </div>
