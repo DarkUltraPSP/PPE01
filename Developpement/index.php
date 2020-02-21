@@ -3,9 +3,6 @@
 include_once "header.php";
 ?>
 
-<div class="Recherche">
-    Search::search();
-</div>
 <?php
     DatabaseLinker::getConnexion();
     

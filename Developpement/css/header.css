@@ -30,3 +30,9 @@
     flex-direction: row;
     text-align: center;
 }
+
+.Recherche
+{
+    display:flex;
+    height: 75px;
+}

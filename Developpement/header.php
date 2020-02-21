@@ -26,3 +26,15 @@
                 <a href=""><input type="button" value="Inscription" class="bouton"/></a>
             </div>
         </div>
+        <div class="Recherche">
+            <form method="POST" action="Search.php">
+                <input type="text" name="Recherche"/>
+                <SELECT name="TypeRecherche" size="1">
+                    <option> Sujet
+                    <option> Auteur
+                    <option> Message
+                </SELECT>
+                <input type="submit" value="Rechercher">
+            </form>
+            <?php Search::research(); ?>
+        </div>
