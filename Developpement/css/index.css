@@ -19,7 +19,7 @@ body
     width:20%;
     heigth:100%;
     
-    background-color: blue;
+    background-color:#6E8291;
     flex-wrap:wrap;
 }
 .Milieu
@@ -33,7 +33,8 @@ body
 {
     width:20%;
     heigth:100%;
-    background-color:red;
+    background-color:#6E8291;
+
     justify-content: flex-end;
     flex-wrap:wrap;
 }
@@ -41,4 +42,19 @@ body
 {
     justify-content: center;
     display:flex;
+}
+
+.apex
+{
+    width:100px;
+    heigth:100%;
+    margin:20px;
+    
+}
+
+.switch
+{
+    width:100px;
+    heigth:100%;
+    margin:20px;
 }
