@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: space-between;
     height: 100px;
-    background-color: #007cff;
+    background-image : url(https://png.pngtree.com/thumb_back/fw800/back_our/20190622/ourmid/pngtree-simple-technology-forum-general-background-material-image_208058.jpg);
 }
 
 .nomForum
@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-around;
     font-size: 200%;
+    color : white;
 }
 
 .logo
@@ -35,4 +36,9 @@
 {
     display:flex;
     height: 75px;
+}
+.RechercheCenter
+{
+    margin-bottom: 20px;
+    margin-top:20px;
 }

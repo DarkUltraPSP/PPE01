@@ -4,7 +4,7 @@ include_once "include/header.php";
 ?>
 
 <?php
-<<<<<<< Updated upstream
+
     DatabaseLinker::getConnexion();
     
     $sujets = SujetManager::findAllSujet();
@@ -23,12 +23,13 @@ include_once "include/header.php";
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
         echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
-=======
+
     // DatabaseLinker::getConnexion();
     // echo "<pre>";
     // print_r(CommentaireManager::findAllCommentaire());
     // echo "</pre>";
->>>>>>> Stashed changes
+
+
 ?>
 <div class="Commentaire">
 <?php
