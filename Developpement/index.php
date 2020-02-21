@@ -30,7 +30,9 @@ include_once "header.php";
             foreach ($users as $user)
             {
                 if ($user->getIdUtilisateur() == $commentaire->getidUtilisateur())
+                {
                     echo "<div class='NomSujet'><h> Ecrit par : ".$user->getPseudo()."</h></div>";
+                }
             }
             echo "<div class='Date'><h>".$commentaire->getDateCommentaire()."</h></div>";
             echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";

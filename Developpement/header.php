@@ -36,5 +36,5 @@
                 </SELECT>
                 <input type="submit" value="Rechercher">
             </form>
-            <?php Search::research(); ?>
+          
         </div>
