@@ -25,22 +25,21 @@ include_once "include/header.php";
             }
             echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
             echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
-?>
+            ?>
         <div class="Commentaire">
-<?php
-                foreach ($commentaires as $commentaire)
+            <?php
+            foreach ($commentaires as $commentaire)
+            {
+                foreach ($users as $user)
                 {
-                    echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
-                    foreach ($users as $user)
+                    if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
                     {
-                        if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
-                        {
-                            echo "<h>Ecrit par :".$user->getPseudo()."</h>";
-                        }
+                        echo "<h>Ecrit par :".$user->getPseudo()."</h>";
                     }
-                    echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
-                    echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
                 }
+                echo "<div class='Date'> <h>Publié le : </h>".$commentaire->getDateCommentaire()."</div>";
+                echo "<div class='Contenu'>".$commentaire->getContenuCommmentaire()."</div>";
+            }
         }
 ?>
         </div>

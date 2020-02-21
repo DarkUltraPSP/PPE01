@@ -23,7 +23,7 @@
             <p class="nomForum"> Nom du Forum </p>
             <div class="boutonPosition">
                 <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
-                <a href=""><input type="button" value="Inscription" class="bouton"/></a>
+                <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
             </div>
         </div>
         <div class="Recherche">
