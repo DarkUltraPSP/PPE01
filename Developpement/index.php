@@ -1,4 +1,3 @@
-  
 <?php
 include_once "include/header.php";
 ?>
@@ -10,6 +9,7 @@ include_once "include/header.php";
     <div class="Milieu">
     <?php
 
+<<<<<<< HEAD
         DatabaseLinker::getConnexion();
 
         $sujets = SujetManager::findAllSujet();
@@ -17,6 +17,30 @@ include_once "include/header.php";
         $users = SujetManager::getUser();
 
         foreach ($sujets as $sujet)
+=======
+    DatabaseLinker::getConnexion();
+    
+    $sujets = SujetManager::findAllSujet();
+    $commentaires = SujetManager::getCommentaire();
+    $users = SujetManager::getUser();
+    
+    foreach ($sujets as $sujet)
+    {
+        echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
+        foreach ($users as $user)
+        {
+            if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
+            {
+                echo "<h>Ecrit par :".$user->getPseudo()."</h>";
+            }
+        }
+        echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
+        echo "<div class='Contenu'>".$sujet->getContenuSujet()."</div>";
+?>
+<div class="Commentaire">
+<?php
+        foreach ($commentaires as $commentaire)
+>>>>>>> master
         {
             echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
             foreach ($users as $user)
@@ -59,5 +83,5 @@ include_once "include/header.php";
     </div>
 </div>
 <?php
-include_once("include/footer.php")
+include_once "include/footer.php";
 ?>
