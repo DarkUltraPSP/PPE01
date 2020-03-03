@@ -14,14 +14,7 @@ body
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.Droit
-{
-    width:20%;
-    heigth:100%;
-    
-    background-color:#6E8291;
-    flex-wrap:wrap;
-}
+
 .Milieu
 {
     width:60%;
@@ -29,14 +22,16 @@ body
     flex-wrap:wrap;
     margin:10px;
 }
-.Gauche
+.cote
 {
-    width:20%;
-    heigth:100%;
-    background-color:#6E8291;
-
-    justify-content: flex-end;
-    flex-wrap:wrap;
+    width: 20%;
+    background-color: #dfdede;
+    flex-direction: column;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 .Organisation
 {
@@ -57,4 +52,22 @@ body
     width:100px;
     heigth:100%;
     margin:20px;
+}
+
+.border
+{
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-left-width: 1px;
+    border-left-style: solid;
+    margin: 2px;
+}
+
+.NomSujet
+{
+    font-size: 20px;
 }

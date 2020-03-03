@@ -2,7 +2,7 @@
 include_once "include/header.php";
 ?>
 <div class="Organisation">
-    <div class="Droit">
+    <div class="cote">
         <p> Gauche </p>        
     </div> <!--Ferme div Droit -->
     <div class="Milieu">
@@ -12,8 +12,10 @@ include_once "include/header.php";
     $sujets = SujetManager::findAllSujet();
     $commentaires = SujetManager::getCommentaire();
     $users = SujetManager::getUser();
+
     foreach ($sujets as $sujet)
     {
+        echo '<div class="border">'; //Debut div border
         echo "<div class='NomSujet'><p>".$sujet->getNomSujet()."</p></div>";
         foreach ($users as $user)
         {
@@ -23,12 +25,13 @@ include_once "include/header.php";
             }
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
+        echo '</div>';// Fin div border
     }
 ?>
     </div> <!--Ferme div Milieu -->
-    <div class="Gauche"> 
-        <img src="image/pub.jpg" alt="" class="apex" />
-        <img src="image/pub2.jpg" alt="" class="switch" />
+    <div class="cote"> 
+        <img src="image/pub.jpg" alt="" class="apex"/>
+        <img src="image/pub2.jpg" alt="" class="switch"/>
     </div> <!--Ferme div Gauche -->
 </div> <!--Ferme div Organisation -->
 
