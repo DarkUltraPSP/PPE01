@@ -15,17 +15,18 @@
         <title>Forum PPE01</title>
         <link rel="stylesheet" type="text/css" href="css/header.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
+        <link rel="stylesheet" type="text/css" href="css/Organisation.css" media="all"/>
         <link rel="icon" type="image/logo.png" href="images/logo.png" />
     </head>
     <body>
-        <div class = "entete">
-            <img src="image/logo.png" class="logo">
+        <header>
+            <img src="image/logo.png" class="logo"></a>
             <p class="nomForum"> Nom du Forum </p>
             <div class="boutonPosition">
                 <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
                 <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
             </div>
-        </div>
+        </header>
         <div class="Recherche">
                 <form method="POST" action="Search.php" class="RechercheCenter">
                 <input type="text" name="Recherche"/>
@@ -38,3 +39,8 @@
             </form>
             <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
         </div>
+        <div class="Orga">
+            <div class="lateral">
+                <h>C'est la pub</h>
+            </div>
+            <div class="block">
