@@ -35,8 +35,9 @@
     } 
     
 ?>
-    <form method="POST" action="Connexion.php">
-     <a href="index.php"><input type="button" value="Retour" class="bouton"/></a>
+    <form method="POST" action="index.php">
+        <input type="text" name="idUtilisateur" placeholder="Nom d'utilisateur">
+        <input type="submit" value="Connexion" class="bouton"/>
     </form> 
 
 

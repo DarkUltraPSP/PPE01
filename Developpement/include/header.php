@@ -7,6 +7,12 @@
     include_once ("data/Commentaire.php");
     include_once ("data/Sujet.php");
     include_once ("data/User.php");
+    
+    DatabaseLinker::getConnexion();
+
+    $sujets = SujetManager::findAllSujet();
+    $commentaires = Commentairemanager::findAllCommentaires();
+    $users = UsersManager::findAllUsers();
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -21,7 +27,7 @@
     <body>
         <header>
             <img src="image/logo.png" class="logo"></a>
-            <p class="nomForum"> Nom du Forum </p>
+            <a href="index.php"><p class="nomForum"> Nom du Forum </p></a>
             <div class="boutonPosition">
                 <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
                 <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>

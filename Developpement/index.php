@@ -2,11 +2,6 @@
 include_once "include/header.php";
 ?>
 <?php
-    DatabaseLinker::getConnexion();
-
-    $sujets = SujetManager::findAllSujet();
-    $commentaires = SujetManager::getCommentaire();
-    $users = SujetManager::getUser();
 
     foreach ($sujets as $sujet)
     {
@@ -25,7 +20,7 @@ include_once "include/header.php";
             }
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
-        echo '</div>';// Fin div border
+        echo '</div>'; // Fin div border
     }
 ?>
 

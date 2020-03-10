@@ -5,11 +5,6 @@ $page = 'AllSujets';
 
 <link rel="stylesheet" type="text/css" href="css/AllSujets.css" media="all"/>
 
-<?php
-$sujets = SujetManager::findAllSujet();
-$commentaires = SujetManager::getCommentaire();
-$users = SujetManager::getUser();
-?>
         <?php
         foreach ($sujets as $sujet)
         {

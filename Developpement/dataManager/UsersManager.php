@@ -23,4 +23,22 @@ class UsersManager
         }
         return $user;
     }
+    
+    public static function findAllUsers()
+    {
+        $users = new User();
+        $login = dataBaseLinker::getConnexion();
+        $state = $login->prepare("SELECT * FROM Utilisateur");
+        $tabUser = [];
+        $state->execute();
+        $resultats=$state->fetchAll();
+        
+        foreach($resultats as $lineResultat)
+        {
+            $users = UsersManager::findUser($lineResultat["idUtilisateur"]);
+            $tabUser[] = $users;
+        }
+        return $tabUser;
+    }
+    
 }

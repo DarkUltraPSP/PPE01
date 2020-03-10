@@ -39,37 +39,4 @@ class SujetManager
         return $tabSujet;
     }
     
-    public static function getUser()
-    {
-        $users = new User();
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Utilisateur");
-        $tabUser = [];
-        $state->execute();
-        $resultats=$state->fetchAll();
-        
-        foreach($resultats as $lineResultat)
-        {
-            $users = UsersManager::findUser($lineResultat["idUtilisateur"]);
-            $tabUser[] = $users;
-        }
-        return $tabUser;
-    }
-    
-    public static function getCommentaire()
-    {
-        $com = new Commentaire();
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Commentaire");
-        $tabCom = [];
-        $state->execute();
-        $resultats=$state->fetchAll();
-        
-        foreach($resultats as $lineResultat)
-        {
-            $com = CommentaireManager::findCommentaire($lineResultat["idCommentaire"]);
-            $tabCom[] = $com;
-        }
-        return $tabCom;
-    }
 }
