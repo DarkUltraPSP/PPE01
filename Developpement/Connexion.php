@@ -1,23 +1,26 @@
 <?php
-
-    function ConnexPseudo ($pseudo)
+    session_name("sessionAdmin");
+    session_start();
+    
+    include ("include/header.php");
+    function ConnexPseudo($pseudo)
     {
-            $pseudoAdmin ="admin";
+        $pseudoAdmin ="admin";
 
 
-             $codeRetour = false;
+        $codeRetour = false;
 
-            if($pseudo==$pseudoAdmin )
-            {
-                $codeRetour = true; 
+        if($pseudo==$pseudoAdmin )
+        {
+            $codeRetour = true; 
 
 
-            }
-            return $codeRetour;
-
+        }
+        return $codeRetour;
+        
     }
-
-    function ConnexPassword ($password)
+  
+    /*function ConnexPassword ($password)
     {
         $passwordAdmin ="admin";
         
@@ -32,14 +35,32 @@
         }
         return $codeRetour;
       
-    } 
+    } */
+     
     
+    if (!empty($_POST["pseudo"])) //&& !empty($_POST["password"]))
+    {
+        
+        if (ConnexPseudo($_POST["pseudo"]) ==true)
+        {
+           //$_SESSION["login"]= $_POST["pseudo"];
+           header('Location: index.php');
+        }
+    }
 ?>
     <form method="POST" action="Connexion.php">
-     <a href="index.php"><input type="button" value="Retour" class="bouton"/></a>
+
+        <input type ="text" name="pseudo"/>
+        
+        <input type="button" value="Connexion"/>
+     <a href="index.php"><input type="button" value="retour" /></a>
     </form> 
 
 
 <?php
 
+
+   
+   
+  
 ?>
