@@ -1,6 +1,15 @@
 <?php
     include_once("include/header.php");
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Inscription</title>
+        <link rel="stylesheet" href="css/inscription.css">
+    </head>
+
 <div class="Organisation">
     <div class="Droit">
         <p>Droit</p>        
@@ -63,47 +72,67 @@
 
         }
 
-
     ?>
-
-        <div class = "Prenom">
-            <p>Prenom: </p>
-            <input type="text" name="prenom" value="" />
-        </div>
-
-        <div class="Nom">
-            <p>Nom: </p>
-            <input type="text" name="nom" value="" />
-        </div>
+        <div class = "haut">
+            <div class="hautGauche">
+                <p>Photo</p>
+            </div>
+            <div class="hautDroit">
+                <input type="text" placeholder="Pseudo" name="pseudo" value="" />
+                </br>
+                </br>
+                <p>Date de naissance :</p>
+                <select name="jour" placeholder="Jour">
+                <?php
+                for ($jour = 01; $jour < 31; $jour++) 
+                {
+                ?>
+                    <OPTION><?php echo $jour ?></OPTION>
+                <?php
+                }
+                ?>
+                </select>
+                <select name="Mois" placeholder="Mois">
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select name="annee" placeholder="Annee">
+                <?php
+                for ($annee = 1920; $annee < 2016 ; $annee++) 
+                {
+                ?>
+                    <OPTION><?php echo $annee ?></OPTION>
+                <?php
+                }
+                ?> 
+                </select>
+                </br>
+                </div>
+                <p>Sexe: </p>
+                <select>
+                    <option>Homme</option> 
+                    <option>Femme</option> 
+                <select/>     
         
-        
-    <?php
-
-    ?>
-        <div class = "genre">
-            <p>Pseudo: </p>
-            <input type ="text"/>
-            <p>Sexe: </p>
-            <select>
-                <option>Homme</option> 
-                <option>Femme</option> 
-            <select/>     
-        </div>
-        
-        <div class="adresse">
+        <div class="bas">
             <p>Adresse e-mail: </p>
             <input type="text" name="adresse" value="" />
-        </div>
         
-        <div class="mdp">
             <p>Choisir un mot de passe:</p>
             <input type="text" name="mdp" value="" />
-        </div>
         
-        <div class="mdpconfirmation">
             <p>Confirmation du mot de passe: </p>
             <input type="text" name="mdpconfirmation" value="" />
-        </div>
 
         
 
@@ -116,9 +145,9 @@
         </div>
     </div>
 </div>
-    <div class="Gauche">
-        
-    </div>
+<div class="Gauche">
+
+</div>
 <?php
 include_once ("include/footer.php");
 ?>

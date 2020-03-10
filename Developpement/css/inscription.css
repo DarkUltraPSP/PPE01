@@ -1,1 +1,19 @@
+.Gauche
+{
+    margin-left: 0px;
+    background-color: red;
+    width:20%;
+    height: 100%;
+}
 
+.Milieu
+{
+
+}
+.Droit
+{
+    margin-right:0px;
+    background-color: red;
+    width: 20%;
+    height: 100%;
+}
