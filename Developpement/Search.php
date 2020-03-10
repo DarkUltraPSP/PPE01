@@ -3,7 +3,31 @@
 ?>
 
 <?php
-    
+//$sujets = SearchManager::;
+
+    if (!empty($_POST['Recherche']) && !empty($_POST['TypeRecherche']))
+    {
+        $keyword = $_POST['Recherche'];
+        $typeRecherche = $_POST['TypeRecherche'];
+        switch ($typeRecherche)
+        {
+            case 'Sujet':
+                SearchManager::searchSubject($keyword);
+                break;
+            
+            case 'Auteur':
+                
+                break;
+            
+            case 'Message':
+                
+                break;
+        }
+    }
+    else
+    {
+        echo "Votre recherche ne contient aucun caractère.";
+    }
 ?>
 
 <?php

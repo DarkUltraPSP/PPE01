@@ -3,7 +3,7 @@
     include_once ("dataManager/CommentaireManager.php");
     include_once ("dataManager/UsersManager.php");
     include_once ("dataManager/SujetManager.php");
-    include_once ("dataManager/Search.php");
+    include_once ("dataManager/SearchManager.php");
     include_once ("data/Commentaire.php");
     include_once ("data/Sujet.php");
     include_once ("data/User.php");
@@ -28,14 +28,14 @@
             </div>
         </header>
         <div class="Recherche">
-                <form method="POST" action="Search.php" class="RechercheCenter">
-                <input type="text" name="Recherche"/>
+            <form method="POST" action="Search.php" class="RechercheCenter">
+                <input type="text" name="Recherche" placeholder="Rechercher"/>
                 <SELECT name="TypeRecherche" size="1">
                     <option> Sujet
                     <option> Auteur
                     <option> Message
                 </SELECT>
-                <input type="submit" value="Rechercher">
+            <input type="submit" value="Rechercher">
             </form>
             <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
         </div>
