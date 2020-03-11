@@ -10,11 +10,6 @@
         <link rel="stylesheet" href="css/inscription.css">
     </head>
 
-<div class="Organisation">
-    <div class="Droit">
-        <p>Droit</p>        
-    </div>
-    <div class="Milieu">
     <?php
         function testPseudo ($pseudo)
         {
