@@ -25,7 +25,7 @@ class CommentaireManager {
     {
         $com = new Commentaire();
         $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Commentaire");
+        $state = $login->prepare("SELECT * FROM Commentaire ORDER BY dateCommentaire");
         $tabCom = [];
         $state->execute();
         $resultats=$state->fetchAll();

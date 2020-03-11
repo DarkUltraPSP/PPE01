@@ -78,7 +78,7 @@
             echo "</div>";
             ?>
             <div class="newCom">
-                <form method="POST" class="inputCom">
+                <form method="POST" action="PageSujet.php" class="inputCom">
                     <textarea name="Reponse" placeholder="Ecrire un commentaire" class="inputCom" ></textarea>
                     <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet" />
                     <input type="text" name="idUtilisateur" placeholder="Mettez votre idUtilisateur" />
@@ -87,6 +87,10 @@
             </div>
 
             <?php
+            if (!empty($_POST["Reponse"]))
+            {
+                header("Location : PageSujet.php");
+            }
 
         }
         

@@ -58,7 +58,7 @@ FOREIGN KEY (idUtilisateur)
 REFERENCES Utilisateur (idUtilisateur);
 
 INSERT INTO Utilisateur (idUtilisateur, pseudo, password, dateNaissance, cheminPhoto, sexe, mail, ban) VALUES
-(1, "Test" , "password",  "2000-12-13", "UserImage/Berserk.png", "Homme", "test@gmail.com", 0),
+(1, "Admin" , "admin",  "2000-12-13", "UserImage/administrateur.png", "Homme", "admin@gmail.com", 0),
 (2, "Ixoti", "password", "1999-02-17", "UserImage/PDP Berserk.png", "Homme", "Ixoti@gmail.com", 0),
 (3, "Ogur", "password", "1998-03-17" ,"1046497.jpg", "Homme", "Ogur@gmail.com", 0);
 
