@@ -1,15 +1,7 @@
 <?php
     include_once("include/header.php");
 ?>
-
-<!DOCTYPE html>
-<html lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <title>Inscription</title>
-        <link rel="stylesheet" href="css/inscription.css">
-    </head>
-
+<link rel="stylesheet" type="text/css" href="css/inscription.css" media="all"/>
     <?php
         function testPseudo ($pseudo)
         {
@@ -68,9 +60,13 @@
         }
 
     ?>
+<div class="titre">
+    <p>bonjour</p>
+</div>
         <div class = "haut">
             <div class="hautGauche">
-                <p>Photo</p>
+                <img src="" width="150" height="150"/>
+
             </div>
             <div class="hautDroit">
                 <input type="text" placeholder="Pseudo" name="pseudo" value="" />
@@ -112,22 +108,22 @@
                 ?> 
                 </select>
                 </br>
-                </div>
                 <p>Sexe: </p>
                 <select>
                     <option>Homme</option> 
                     <option>Femme</option> 
-                <select/>     
-        
+                <select/>
+            </div>
+        </div>
         <div class="bas">
             <p>Adresse e-mail: </p>
             <input type="text" name="adresse" value="" />
         
             <p>Choisir un mot de passe:</p>
-            <input type="text" name="mdp" value="" />
+            <input type="password" name="mdp" value="" />
         
             <p>Confirmation du mot de passe: </p>
-            <input type="text" name="mdpconfirmation" value="" />
+            <input type="password" name="mdpconfirmation" value="" />
 
         
 
@@ -138,7 +134,7 @@
         </form>
 
         </div>
-    </div>
+</div>
 </div>
 <div class="Gauche">
 

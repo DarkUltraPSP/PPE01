@@ -1,19 +1,22 @@
-.Gauche
-{
-    margin-left: 0px;
-    background-color: red;
-    width:20%;
-    height: 100%;
-}
-
 .Milieu
 {
-
+    width: 60%;
+    background-color: blue;
 }
-.Droit
+.hautDroit
 {
     margin-right:0px;
+    height:50%;
     background-color: red;
-    width: 20%;
-    height: 100%;
+}
+.hautGauche
+{
+    margin-right:0px;
+    height:50%;
+    background-color: blue;
+}
+.titre
+{
+    text-align: center;
+
 }
