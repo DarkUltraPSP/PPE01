@@ -5,21 +5,11 @@
 <link rel="stylesheet" type="text/css" href="css/PageSujet.css" media="all"/>
 
 <?php
-
-    if (!empty($_POST["rep"]))
-    {
-
-        $insertCom = new Commentaire();
-        $insertCom->setContenuCommmentaire($_POST["Reponse"]);
-        $insertCom->setIdArticle($_POST["idSujet"]);
-        $insertCom->setIdUtilisateur($_POST["idUtilisateur"]);
-        CommentaireManager::insertCommentaire($insertCom);
-    }
                 
     foreach ($sujets as $sujet)
     {
         
-        if (!empty($_POST["idSujet"]) && $_POST["idSujet"] == $sujet->getIdSujet())
+        if (!empty($_GET["idSujet"]) && $_GET["idSujet"] == $sujet->getIdSujet())
         {
             
             echo "<div class='Sujet'>";
@@ -59,11 +49,13 @@
                     ?>
                     <form method="POST" action="SupprCommentaire.php">
                         <input type="hidden" value="<?php echo $com->getIdCommentaire();?>" name="idCom" />
-                        <input type="hidden" value="<?php echo $com->getContenuCommmentaire();?>" name="content" />
+                        <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
                         <input type="submit" value="Supprimer"/>
                     </form>
-                    <form method="POST" action="ModifCommentaire.php">
+                    <form method="POST" action="ModifComForm.php">
                         <input type="hidden" value="<?php echo $com->getIdCommentaire();?>" name="idCom" />
+                        <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
+                        <input type="hidden" value="<?php echo $com->getContenuCommmentaire();?>" name="content" />
                         <input type="submit" value="Modifier"/>
                     </form>
                     <?php
@@ -73,13 +65,13 @@
                 
             }
             
-            echo sizeof(CommentaireManager::findAllCommentaires($_POST["idSujet"] ));
+            echo sizeof(CommentaireManager::findAllCommentaires($_GET["idSujet"]));
             
             echo "</div>";
             ?>
             <div class="newCom">
-                <form method="POST" action="PageSujet.php" class="inputCom">
-                    <textarea name="Reponse" placeholder="Ecrire un commentaire" class="inputCom" ></textarea>
+                <form method="POST" action="insertCom.php" class="inputCom">
+                    <textarea name="content" placeholder="Ecrire un commentaire" class="inputCom" ></textarea>
                     <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet" />
                     <input type="text" name="idUtilisateur" placeholder="Mettez votre idUtilisateur" />
                     <input name = "rep" type="submit" value="Repondre"/>

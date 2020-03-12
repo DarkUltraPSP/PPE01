@@ -54,8 +54,17 @@ class CommentaireManager {
     public static function delCommentaire($idCommentaire)
     {
         $login = DatabaseLinker::getConnexion();
-        $state = $login->prepare("DELETE FROM Commentaire WHERE idCommentaire =  ?;");
+        $state = $login->prepare("DELETE FROM Commentaire WHERE idCommentaire =  ?");
         $state->bindParam(1, $idCommentaire);
+        $state->execute();
+    }
+    
+    public static function modifCommentaire($contenuCom, $idCom)
+    {
+        $login = DatabaseLinker::getConnexion();
+        $state = $login->prepare("UPDATE Commentaire SET contenuCommentaire = ? WHERE idCommentaire = ?");
+        $state->bindParam(1, $contenuCom);
+        $state->bindParam(2, $idCom);
         $state->execute();
     }
 }

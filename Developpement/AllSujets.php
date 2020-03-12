@@ -9,7 +9,7 @@ $page = 'AllSujets';
         foreach ($sujets as $sujet)
         {
         ?>
-            <form method='POST' action='PageSujet.php'>
+            <form method='GET' action='PageSujet.php'>
                 <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                 <input type="submit" name="idSujetSubmit" class="NomSujet link" value="<?php echo $sujet->getNomSujet() ?>" />
             </form>

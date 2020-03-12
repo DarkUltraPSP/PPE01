@@ -27,7 +27,7 @@ class SujetManager
         $tabSujet = [];
         $subject = new Sujet();
         $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Sujet");
+        $state = $login->prepare("SELECT * FROM Sujet ORDER BY dateSujet");
         $state->execute();
         $resultatsSujet=$state->fetchAll();
         
