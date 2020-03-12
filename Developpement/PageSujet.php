@@ -16,6 +16,23 @@
             echo    "<div><h1>".$sujet->getNomSujet()."</h1></div>";
             echo    "<div class='contenuSujet'>".$sujet->getContenuSujet()."</div>";
             echo    "<div class='date'><h> Publié le ".$sujet->getDateSujet()."</h></div>";
+            ?>
+            <form class="new" method="POST" action="closeSujet.php">
+                <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
+                <input type="hidden" value="<?php echo $sujet->getCanRespond(); ?>" name="canRespond"/>
+                <input type="submit" value= "<?php if ($sujet->getCanRespond() == 1){ echo "Clore le sujet"; } else{ echo "Ouvrir le sujet"; }?>" />
+            </form>
+            <form class="new" method="POST" action="ModifSujetForm.php">
+                <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet" />
+                <input type="hidden" value="<?php echo $sujet->getNomSujet();?>" name="nomSujet" />
+                <input type="hidden" value="<?php echo $sujet->getContenuSujet();?>" name="content" />
+                <input type="submit" value="Modifier"/>
+            </form>
+            <form class="new" method="POST" action="SupprSujet.php">
+                <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
+                <input type="submit" value="Supprimer" />
+            </form>
+            <?php
             echo "</div>";
             
             echo "<div>";
@@ -38,7 +55,6 @@
                             echo    "<div><img class='pdp' src='".$user->getCheminPhoto()."'></div>";
                             echo "</div>";
                         }
-                        
                     }
                     
                     echo "<div class='contenuCom'>";
@@ -65,9 +81,9 @@
                 
             }
             
-            echo sizeof(CommentaireManager::findAllCommentaires($_GET["idSujet"]));
-            
             echo "</div>";
+            if ($sujet->getCanRespond() == 1)
+            {
             ?>
             <div class="newCom">
                 <form method="POST" action="insertCom.php" class="inputCom">
@@ -79,6 +95,7 @@
             </div>
 
             <?php
+            }
             if (!empty($_POST["Reponse"]))
             {
                 header("Location : PageSujet.php");

@@ -1,6 +1,10 @@
 <?php
 include_once "include/header.php";
 ?>
+<form class="new" method="POST" action="NewSujet.php">
+    <input type="hidden" value="" name="idUser">
+    <input class="link" type="submit" value="Nouveau Sujet"/>
+</form>
 <?php
 
     foreach ($sujets as $sujet)
@@ -21,6 +25,13 @@ include_once "include/header.php";
             }
         }
         echo "<div class='Date'> <h>Publié le : </h>".$sujet->getDateSujet()."</div>";
+        ?>
+        <form class="new" method="POST" action="SupprSujet.php">
+            <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
+            <input class="link" type="submit" value="Supprimer" />
+        </form>
+
+<?php
         echo '</div>'; // Fin div border
     }
 ?>

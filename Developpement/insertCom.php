@@ -1,7 +1,6 @@
 <?php
 include_once 'include/header.php';
 
-$idSujet = $_POST['idSujet'];
 if (!empty($_POST["content"]) && !empty($_POST["idSujet"]) && !empty($_POST["idUtilisateur"]))
     {
         $idSujet = $_POST['idSujet'];
