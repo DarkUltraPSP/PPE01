@@ -59,24 +59,30 @@
 
         }
 
-    ?>
-<div class="bloc">
-    <form method="POST" action="insertUser.php">
+    ?>    
+<div class="contour">
+    <p class="titre">------------------Inscription------------------</p>
+    <div>
+
+    <form class="bloc" method="POST" action="insertUser.php">
+        <img class="details" src="" width="100" height="100"/>
         <div class="info">
-            <input type="text" name="pseudo" placeholder="Pseudo" />
-            <input type="text" name="mail" placeholder="Adresse e-mail" />
-            <input type="password" name="password" placeholder="Mot de passe"/>
+            <input class="details" type="text" name="pseudo" placeholder="Pseudo"/>
+            <input class="details" type="text" name="mail" placeholder="Adresse e-mail" />
+            <input class="details" type="password" name="password" placeholder="Mot de passe"/>
         </div>
         <div class="info">
-            <input type="date" max="2016-01-01" min="1920-01-01" name="dateNaissance"/>
-            <select name="sexe" size="1">
+            <input class="details" type="date" max="2016-01-01" min="1920-01-01" name="dateNaissance"/>
+            <select class="details" name="sexe" size="1">
                 <option> Homme </option>
                 <option> Femme </option>
-        </div>
             </select>
-</div>
+        </div>
+    </div>
+   
         <input type="submit" value="S'inscrire" name="inscription"/>
     </form>
+</div>
 <?php
 include_once ("include/footer.php");
 ?>
