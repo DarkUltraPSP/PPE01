@@ -1,0 +1,12 @@
+.bloc
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.info
+{
+    display: flex;
+    flex-direction: column;
+}
