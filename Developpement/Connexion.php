@@ -5,55 +5,55 @@
     include ("include/header.php");
     function ConnexPseudo($pseudo)
     {
-        $pseudoAdmin ="admin";
-
-
         $codeRetour = false;
-
-        if($pseudo==$pseudoAdmin )
+        $users = UsersManager::findAllUsers();
+        foreach ($users as $user)
         {
-            $codeRetour = true; 
-
-
+            
+            if ($user->getPseudo() == $pseudo)
+            {
+                $codeRetour = true;  
+            }                       
         }
         return $codeRetour;
-        
     }
   
-    /*function ConnexPassword ($password)
+    function ConnexPassword ($password)
     {
-        $passwordAdmin ="admin";
-        
-        
-         $codeRetour = false;
-        
-        if($password==$passwordAdmin )
+        $codeRetour = false;
+        $users = UsersManager::findAllUsers();
+       
+        foreach ($users as $user)
         {
-            $codeRetour = true; 
+            if ($user->getMotDePasse() == $password )
+            {
+                $codeRetour = true;   
+            }
             
-               
+                        
         }
         return $codeRetour;
-      
-    } */
+       
+    } 
      
-    
-    if (!empty($_POST["pseudo"])) //&& !empty($_POST["password"]))
+    if (!empty($_POST["pseudo"])&& !empty($_POST["password"]))
     {
-        
-        if (ConnexPseudo($_POST["pseudo"]) ==true)
+        if (ConnexPseudo($_POST["pseudo"]) ==true && ConnexPassword($_POST["password"]) ==true)
         {
+           
            //$_SESSION["login"]= $_POST["pseudo"];
-           header('Location: index.php');
+           header("Location: index.php");
         }
     }
 ?>
+
+
     <form method="POST" action="Connexion.php">
 
-        <input type ="text" name="pseudo"/>
-        
-        <input type="button" value="Connexion"/>
-     <a href="index.php"><input type="button" value="retour" /></a>
+        <input type ="text" name="pseudo" placeholder="Pseudo"/>
+        <input type ="text" name="password" placeholder="Password"/>
+        <input type="submit" value="Connexion"/>
+  
     </form> 
 
 

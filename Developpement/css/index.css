@@ -40,3 +40,9 @@ body
     border: none;
     background-color: transparent;
 }
+
+.new
+{
+    display: flex;
+    justify-content: end;
+}

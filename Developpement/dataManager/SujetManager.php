@@ -4,8 +4,10 @@ class SujetManager
 {
     public static function findSujet($idSujet)
     {
-        $subject = new Sujet();
         $login = DatabaseLinker::getConnexion();
+        
+        $subject = new Sujet();
+        
         $state = $login->prepare("SELECT * FROM Sujet WHERE idSujet = ?");
         $state->bindParam(1, $idSujet);
         $state->execute();
@@ -24,10 +26,12 @@ class SujetManager
     
     public static function findAllSujet()
     {
+        $login = dataBaseLinker::getConnexion();
+        
         $tabSujet = [];
         $subject = new Sujet();
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Sujet");
+        
+        $state = $login->prepare("SELECT * FROM Sujet ORDER BY dateSujet");
         $state->execute();
         $resultatsSujet=$state->fetchAll();
         
@@ -39,37 +43,68 @@ class SujetManager
         return $tabSujet;
     }
     
-    public static function getUser()
+    public static function insertSujet($sujet)
     {
-        $users = new User();
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Utilisateur");
-        $tabUser = [];
-        $state->execute();
-        $resultats=$state->fetchAll();
+        $login = DatabaseLinker::getConnexion();
         
-        foreach($resultats as $lineResultat)
-        {
-            $users = UsersManager::findUser($lineResultat["idUtilisateur"]);
-            $tabUser[] = $users;
-        }
-        return $tabUser;
+        $nom = $sujet->getNomSujet();
+        $content = $sujet->getContenuSujet();
+        $idUtilisateur = $sujet->getIdUtilisateur();
+        $canRespond = 1;
+        
+        $state = $login->prepare("INSERT INTO Sujet (nomSujet, contenuSujet, canRespond, dateSujet, idUtilisateur) VALUES (?, ?, ?, CURDATE(), ?)");
+        $state->bindParam(1, $nom);
+        $state->bindParam(2, $content);
+        $state->bindParam(3, $canRespond);
+        $state->bindParam(4, $idUtilisateur);
+        $state->execute();
     }
     
-    public static function getCommentaire()
+    public static function delSujet($idSujet)
     {
-        $com = new Commentaire();
-        $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Commentaire");
-        $tabCom = [];
-        $state->execute();
-        $resultats=$state->fetchAll();
+        $login = DatabaseLinker::getConnexion();
         
-        foreach($resultats as $lineResultat)
-        {
-            $com = CommentaireManager::findCommentaire($lineResultat["idCommentaire"]);
-            $tabCom[] = $com;
-        }
-        return $tabCom;
+        $state = $login->prepare("DELETE FROM Sujet WHERE idSujet =  ?;");
+        $state->bindParam(1, $idSujet);
+        $state->execute();
+        
+        $state = $login->prepare("DELETE FROM Commentaire WHERE idSujet =  ?;");
+        $state->bindParam(1, $idSujet);
+        $state->execute();
     }
+    
+    public static function modifSujet($idSujet, $nomSujet, $contenuSujet)
+    {
+        $login = DatabaseLinker::getConnexion();
+        
+        $state = $login->prepare("UPDATE Sujet SET contenuSujet = ? WHERE idSujet = ?");
+        $state->bindParam(1, $contenuSujet);
+        $state->bindParam(2, $idSujet);
+        $state->execute();
+        
+        $state = $login->prepare("UPDATE Sujet SET nomSujet = ? WHERE idSujet = ?");
+        $state->bindParam(1, $nomSujet);
+        $state->bindParam(2, $idSujet);
+        $state->execute();
+    }
+    
+    public static function OpenCloseSujet($idSujet, $canRespond)
+    {
+        $login = DatabaseLinker::getConnexion();
+        
+        if ($canRespond == 1)
+        {
+            $canRep = 2;
+        }
+        else if ($canRespond == 2)
+        {
+            $canRep = 1;
+        }
+        
+        $state = $login->prepare("UPDATE Sujet SET canRespond = ? WHERE idSujet = ?");
+        $state->bindParam(1, $canRep);
+        $state->bindParam(2, $idSujet);
+        $state->execute();
+    }
+    
 }

@@ -20,6 +20,8 @@
 {
     display: flex;
     justify-content: end;
+    width: 20%;
+    height: 100%;
 }
 
 .com
@@ -36,13 +38,15 @@
     border-bottom-style: solid;
     padding: 10px;
     margin: 10px;
+    justify-content: space-between;
 }
 
-.userCom
+.lateral
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 20%;
 }
 
 h3
@@ -52,15 +56,26 @@ h3
 
 .pdp
 {
-    width: 100px;
+    width: 150px;
 }
 
 .contenuCom
 {
     display:flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    margin-right: 5%;
-    margin-left: 5%;
+    width: 60%;
+    
+}
+
+.newCom
+{
+    display: flex;
+    margin: 10px;
+    flex-wrap: wrap;
+}
+
+.inputCom
+{
+    width: 100%;
 }
