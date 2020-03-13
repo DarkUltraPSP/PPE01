@@ -26,8 +26,11 @@
 }
 .titre
 {
-    font-size: 20px;
+    font-size: 30px;
     text-align: center;
+    border-width:1px;
+    border-style:outset;
+    border-color:black;
 }
 .inscrire
 {
