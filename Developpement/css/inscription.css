@@ -22,6 +22,7 @@
     border-width: 1px;
     border-style: double;
     border-color: black;
+    background-color: lightsteelblue;
 }
 .titre
 {
@@ -33,4 +34,11 @@
     margin-right: 0px;
     display: flex;
     align-items:flex-end;    
+}
+.photoProfil
+{
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+    margin:10px;
 }

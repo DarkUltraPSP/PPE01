@@ -65,7 +65,7 @@
     <div>
 
     <form class="bloc" method="POST" action="insertUser.php">
-        <img class="details" src="" width="100" height="100"/>
+        <img class="photoProfil" src="" width="150" height="150"/>
         <div class="info">
             <input class="details" type="text" name="pseudo" placeholder="Pseudo"/>
             <input class="details" type="text" name="mail" placeholder="Adresse e-mail" />
@@ -80,7 +80,7 @@
         </div>
     </div>
    
-        <input type="submit" value="S'inscrire" name="inscription"/>
+        <input class="inscrire" type="submit" value="S'inscrire" name="inscription"/>
     </form>
 </div>
 <?php
