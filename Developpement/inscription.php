@@ -60,8 +60,11 @@
         }
 
     ?>
-<div>
+<div class="contour">
+    <p class="titre">Inscription</p>
     <form class="bloc" method="POST" action="insertUser.php">
+        <img class="photoProfil" src="" width="150" height="150"/>
+
         <div class="info">
             <input class="details" type="text" name="pseudo" placeholder="Pseudo"/>
             <input class="details" type="text" name="mail" placeholder="Adresse e-mail" />
@@ -72,14 +75,15 @@
             <select class="details" name="sexe" size="1">
                 <option> Homme </option>
                 <option> Femme </option>
-            </select>
                 <option> Hélicoptère d'attaque </option>
+            </select>
+                
             <input type="hidden" name="pdp" value="UserImage/utilisateur.png"/>
         </div>
-    </div>
-   
+    
         <input class="inscrire" type="submit" value="S'inscrire" name="inscription"/>
     </form>
+    </div>
 </div>
 <?php
 include_once ("include/footer.php");
