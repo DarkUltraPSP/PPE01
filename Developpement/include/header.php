@@ -36,11 +36,12 @@
         </header>
         <div class="Recherche">
             <form method="POST" action="Search.php" class="RechercheCenter">
-                <input type="text" name="Recherche" placeholder="Rechercher"/>
+                <input type="text" name="Recherche" placeholder="Rechercher" required/>
                 <SELECT name="TypeRecherche" size="1">
-                    <option> Sujet
-                    <option> Auteur
-                    <option> Message
+                    <option> Trier par : </option>
+                    <option value="Sujet"> Sujet </option>
+                    <option value="Auteur"> Auteur </option>
+                    <option value="Message"> Message </option>
                 </SELECT>
             <input type="submit" value="Rechercher">
             </form>
@@ -48,6 +49,5 @@
         </div>
         <div class="Orga">
             <div class="lateral">
-                <h>C'est la pub</h>
             </div>
             <div class="block">

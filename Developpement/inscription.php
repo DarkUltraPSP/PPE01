@@ -60,8 +60,8 @@
         }
 
     ?>
-<div class="bloc">
-    <form method="POST" action="insertUser.php">
+<div>
+    <form class="bloc" method="POST" action="insertUser.php">
         <div class="info">
             <input type="text" name="pseudo" placeholder="Pseudo" />
             <input type="text" name="mail" placeholder="Adresse e-mail" />
@@ -72,6 +72,9 @@
             <select name="sexe" size="1">
                 <option> Homme </option>
                 <option> Femme </option>
+                <option> Hélicoptère d'attaque </option>
+            </select>
+            <input type="hidden" name="pdp" value="UserImage/utilisateur.png"/>
         </div>
             </select>
 </div>

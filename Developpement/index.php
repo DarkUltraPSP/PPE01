@@ -16,7 +16,7 @@ include_once "include/header.php";
             <input type="submit" name="idSujetSubmit" class="NomSujet link" value="<?php echo $sujet->getNomSujet() ?>" />
         </form>
         <?php
-            echo "<div><h>Commentaires : </h>".sizeof(CommentaireManager::findAllCommentaires($sujet->getIdSujet()))."</div>";
+            echo "<div><h>Nombre de commentaires : ".SujetManager::countComs($sujet->getIdSujet())."</h></div>";
         foreach ($users as $user)
         {
             if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
@@ -28,7 +28,7 @@ include_once "include/header.php";
         ?>
         <form class="new" method="POST" action="SupprSujet.php">
             <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
-            <input class="link" type="submit" value="Supprimer" />
+            <input type="submit" value="Supprimer" />
         </form>
 
 <?php

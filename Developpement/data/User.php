@@ -6,13 +6,14 @@ class User
     private $pseudo;
     private $motDePasse;
     private $dateNaissance;
+    private $dateInscription;
     private $cheminPhoto;
     private $sexe;
     private $mail;
     private $ban;
-    
+
     function getIdUtilisateur() {
-        return $this->idUtilisateur;
+    return $this->idUtilisateur;
     }
 
     function getPseudo() {
@@ -27,6 +28,10 @@ class User
         return $this->dateNaissance;
     }
 
+    function getDateInscription() {
+        return $this->dateInscription;
+    }
+    
     function getCheminPhoto() {
         return $this->cheminPhoto;
     }
@@ -58,7 +63,11 @@ class User
     function setDateNaissance($dateNaissance) {
         $this->dateNaissance = $dateNaissance;
     }
-
+    
+    function setDateInscription($dateInscription) {
+        $this->dateInscription = $dateInscription;
+    }
+    
     function setCheminPhoto($cheminPhoto) {
         $this->cheminPhoto = $cheminPhoto;
     }
@@ -74,6 +83,5 @@ class User
     function setBan($ban) {
         $this->ban = $ban;
     }
-
 
 }

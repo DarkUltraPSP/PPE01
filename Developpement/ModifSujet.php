@@ -1,7 +1,8 @@
 <?php
+
 include_once 'include/header.php';
 
-    if (!empty($_POST["idSujet"]) && !empty($_POST["nomSujet"]) && !empty($_POST["modifSujet"]))
+if (!empty($_POST["idSujet"]) && !empty($_POST["nomSujet"]) && !empty($_POST["modifSujet"]))
     {
         $idSujet = $_POST['idSujet'];
         $content = $_POST['modifSujet'];

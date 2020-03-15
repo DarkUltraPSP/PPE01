@@ -24,10 +24,6 @@
                 break;
         }
     }
-    else
-    {
-        echo "Votre recherche ne contient aucun caractère.";
-    }
 ?>
 
 <?php
