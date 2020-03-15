@@ -19,6 +19,7 @@ class UsersManager
             $user->setCheminPhoto($lineResultat["cheminPhoto"]);
             $user->setSexe($lineResultat["sexe"]);
             $user->setMail($lineResultat["mail"]);
+            $user->setIsAdmin($lineResultat["isAdmin"]);
             $user->setBan($lineResultat["ban"]);
         }
         return $user;
