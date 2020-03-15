@@ -66,13 +66,13 @@
         <img class="photoProfil" src="" width="150" height="150"/>
 
         <div class="info">
-            <input class="details" type="text" name="pseudo" placeholder="Pseudo"/>
-            <input class="details" type="text" name="mail" placeholder="Adresse e-mail" />
-            <input class="details" type="password" name="password" placeholder="Mot de passe"/>
+            <input class="details" type="text" name="pseudo" placeholder="Pseudo" required/>
+            <input class="details" type="text" name="mail" placeholder="Adresse e-mail" required/>
+            <input class="details" type="password" name="password" placeholder="Mot de passe" required/>
         </div>
         <div class="info">
-            <input class="details" type="date" max="2016-01-01" min="1920-01-01" name="dateNaissance"/>
-            <select class="details" name="sexe" size="1">
+            <input class="details" type="date" max="2016-01-01" min="1920-01-01" name="dateNaissance" required/>
+            <select class="details" name="sexe" size="1" required>
                 <option> Homme </option>
                 <option> Femme </option>
                 <option> Hélicoptère d'attaque </option>
