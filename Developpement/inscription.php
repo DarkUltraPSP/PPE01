@@ -4,8 +4,8 @@
 <link rel="stylesheet" type="text/css" href="css/inscription.css" media="all"/>
 <div class="contour">
     <p class="titre">Inscription</p>
-    <form class="bloc" method="POST" action="insertUser.php">
-
+    <form method="POST" action="insertUser.php">
+<div class="bloc">
         <div class="info">
             <input class="details" type="text" name="pseudo" placeholder="Pseudo" required/>
             <input class="details" type="text" name="mail" placeholder="Adresse e-mail" required/>
@@ -22,9 +22,9 @@
             <input type="hidden" name="pdp" value="UserImage/utilisateur.png"/>
         </div>
         </br>
+</div>
        <input class="inscrire" type="submit" value="S'inscrire" name="inscription"/>
     </form>
-     
 </div>
 <?php
 include_once ("include/footer.php");
