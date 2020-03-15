@@ -2,64 +2,6 @@
     include_once("include/header.php");
 ?>
 <link rel="stylesheet" type="text/css" href="css/inscription.css" media="all"/>
-    <?php
-        function testPseudo ($pseudo)
-        {
-            $pseudoAdmin ="admin";
-
-
-             $codeRetour = false;
-
-            if($pseudo!==$pseudoAdmin )
-            {
-                $codeRetour = true; 
-
-
-            }
-            return $codeRetour;
-
-        }
-
-        function testemail ($email,$emailConfirmation)
-        {
-            $emailAdmin ="admin@";
-
-
-             $codeRetour = false;
-
-            if ($emailConfirmation==$email)
-            {
-
-                if($email!==$emailAdmin)
-                {
-                    $codeRetour = true; 
-
-                }
-            return $codeRetour;
-            }
-
-        }
-        function testPassword ($password,$PasswordConfirmation)
-        {
-            $passwordAdmin ="admin";
-
-
-             $codeRetour = false;
-
-            if ($password==$PasswordConfirmation)
-            {
-
-                if($password!==$passwordAdmin)
-                {
-                    $codeRetour = true; 
-
-                }
-            return $codeRetour;
-            }
-
-        }
-
-    ?>
 <div class="contour">
     <p class="titre">Inscription</p>
     <form class="bloc" method="POST" action="insertUser.php">
