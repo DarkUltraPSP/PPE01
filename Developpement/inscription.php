@@ -83,7 +83,6 @@
     
         <input class="inscrire" type="submit" value="S'inscrire" name="inscription"/>
     </form>
-    </div>
 </div>
 <?php
 include_once ("include/footer.php");
