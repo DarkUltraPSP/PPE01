@@ -1,6 +1,4 @@
 <?php
-    session_name("sessionAdmin");
-    session_start();
     
     include ("include/header.php");
     
@@ -9,11 +7,11 @@
 <div class="bloc">
     <p class="titre">Connexion</p>
     <div class="interieur">
-        <form method="POST" action="Connexion.php">
+        <form method="POST" action="SessionManager.php">
             <p class="titre2">Pseudo :</p>
             <input class="barre" type ="text" name="pseudo" placeholder="Votre pseudo" required/>
             <p class="titre2"> Mot de passe :</p>
-            <input class="barre" type ="text" name="password" placeholder="Votre mot de passe" required/>
+            <input class="barre" type ="password" name="password" placeholder="Votre mot de passe" required/>
             </br>
             </br>  
             <input class="barre" type="submit" value="Connexion"/>

@@ -1,4 +1,15 @@
 <?php
+if (!isset($_SESSION))
+{
+    session_name('user');
+    session_start();
+}
+
+if (!empty($_GET["deco"]) && $_GET["deco"] == true)
+{
+    session_unset();
+    session_destroy();
+}
     include_once ("dataManager/dataBaseLinker.php");
     include_once ("dataManager/CommentaireManager.php");
     include_once ("dataManager/UsersManager.php");
@@ -29,10 +40,25 @@
         <header>
             <img src="image/logo.png" class="logo"></a>
             <a href="index.php"><p class="nomForum"> Nom du Forum </p></a>
+            <?php
+            if (empty($_SESSION['login']))
+            {
+            ?>
             <div class="boutonPosition">
                 <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
                 <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
             </div>
+            <?php
+            }
+            else
+            {
+            ?>
+            <div class="boutonPosition">
+                <a href="index.php?deco=true"><input type="button" value="Deconnexion" class="bouton"/></a>
+            </div>
+            <?php
+            }
+            ?>
         </header>
         <div class="Recherche">
             <form method="POST" action="Search.php" class="RechercheCenter">
@@ -51,3 +77,10 @@
             <div class="lateral">
             </div>
             <div class="block">
+                <?php
+                if (!empty($_SESSION))
+                {
+                    echo "<pre>";
+                    print_r($_SESSION);
+                    echo "</pre>";
+                }

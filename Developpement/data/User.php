@@ -10,6 +10,7 @@ class User
     private $cheminPhoto;
     private $sexe;
     private $mail;
+    private $isAdmin;
     private $ban;
 
     function getIdUtilisateur() {
@@ -42,6 +43,10 @@ class User
 
     function getMail() {
         return $this->mail;
+    }
+    
+    function getIsAdmin() {
+        return $this->isAdmin;
     }
 
     function getBan() {
@@ -78,6 +83,10 @@ class User
 
     function setMail($mail) {
         $this->mail = $mail;
+    }
+
+    function setIsAdmin($isAdmin) {
+        $this->isAdmin = $isAdmin;
     }
 
     function setBan($ban) {
