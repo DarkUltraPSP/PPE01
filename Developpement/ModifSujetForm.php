@@ -8,14 +8,15 @@ if (!empty($_POST['idSujet']) && $_POST['content'] && $_POST['nomSujet'])
     $content = $_POST['content'];
 }
 ?>
+<link rel="stylesheet" type="text/css" href="css/ModifSujetForm.css" media="all"/>
 <div class="bloc">
-    <p class="titre">Modification du sujet...</p>
+    <p class="titre">Modification en cours...</p>
     <div class="interieur">
         <form method="POST" action="ModifSujet.php">
-            <input type="text" value="<?php echo $nomSujet ?>" name="nomSujet" />
-            <textarea name="modifSujet"><?php echo $content ?></textarea>
+            <input class="barre" type="text" value="<?php echo $nomSujet ?>" name="nomSujet" />
+            <textarea class="barreTexte" name="modifSujet"><?php echo $content ?></textarea>
             <input type="hidden" value="<?php echo $idSujet?>" name="idSujet" />
-            <input type="submit" value="Modifier"/>
+            <input class="barre" type="submit" value="Modifier"/>
         </form>
     </div>
 </div>
