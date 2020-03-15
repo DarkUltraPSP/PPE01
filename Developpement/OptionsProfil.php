@@ -10,8 +10,10 @@ if (!empty($_GET['idUser']))
     
     foreach ($users as $user)
     {
-        if ($_GET['idUser'] == $user->getIdUtilisateur() && $user->getBan()==1)
+        if ($_GET['idUser'] == $user->getIdUtilisateur())
         {
+            if ($user->getBan()==1)
+            {
             ?>
 <div class="all">
     <form class="form column" method="POST" action="ModifUser.php">
@@ -65,15 +67,16 @@ if (!empty($_GET['idUser']))
     </div>
 </div>
 <?php
-        }
-        else if ($user->getBan()==0)
-        {
-            ?>
-            <h> Cet utilisateur à été banni. </h>
-            <a href="index.php"> Retour à l'accueil </a>
-            <?php
-            include_once 'include/footer.php';
-            exit;
+            }
+            else if ($user->getBan()==0)
+            {
+                ?>
+                <h> Cet utilisateur à été banni. </h>
+                <a href="index.php"> Retour à l'accueil </a>
+                <?php
+                include_once 'include/footer.php';
+                exit;
+            }
         }
         
     }
