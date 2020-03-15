@@ -46,8 +46,9 @@
         }
     }
 ?>
-
-
+<link rel="stylesheet" type="text/css" href="css/connexion.css" media="all"/>
+<div class="bloc">
+    <p class="titre">Connexion :</p>
     <form method="POST" action="Connexion.php">
 
         <input type ="text" name="pseudo" placeholder="Pseudo" required/>
@@ -55,8 +56,8 @@
         <input type="submit" value="Connexion"/>
   
     </form> 
-
+</div>
 
 <?php
-  
+    include("include/footer.php")
 ?>

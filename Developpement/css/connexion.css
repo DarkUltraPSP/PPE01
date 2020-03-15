@@ -1,0 +1,14 @@
+.bloc
+{
+    background-color: lightsteelblue;
+    width:60%;
+    height:300px;
+    align-self: center;
+    border-width:1px;
+    border-style:outset;
+    border-color:black;
+}
+.titre
+{
+    text-align: center;
+}
