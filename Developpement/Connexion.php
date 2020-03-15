@@ -58,7 +58,6 @@
             </br>
             </br>  
             <input class="barre" type="submit" value="Connexion"/>
-
         </form> 
     </div>
 </div>
