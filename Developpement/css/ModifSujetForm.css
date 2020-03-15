@@ -1,0 +1,41 @@
+.bloc
+{
+    background-color: lightsteelblue;
+    width:80%;
+    height:400px;
+    align-self: center;
+    border-width:2px;
+    border-style:outset;
+    border-color:black;
+}
+
+.interieur
+{
+    margin:30px;
+    flew-wrap:wrap;
+}
+
+.titre
+{
+    font-size:20px;
+    text-align:center;
+    border-bottom:2px solid black;
+    margin:20px;
+}
+.barre
+{
+    width: 100%;
+    height: 30px;
+}
+
+.barreTexte
+{
+    width: 100%;
+    height: 200px;
+}
+
+.id
+{
+    width: 70px;
+    height: 20px;
+}
