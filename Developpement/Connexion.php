@@ -50,17 +50,13 @@
 
     <form method="POST" action="Connexion.php">
 
-        <input type ="text" name="pseudo" placeholder="Pseudo"/>
-        <input type ="text" name="password" placeholder="Password"/>
+        <input type ="text" name="pseudo" placeholder="Pseudo" required/>
+        <input type ="text" name="password" placeholder="Password" required/>
         <input type="submit" value="Connexion"/>
   
     </form> 
 
 
 <?php
-
-
-   
-   
   
 ?>

@@ -18,18 +18,19 @@ foreach ($sujets as $sujet)
         <input type="submit" name="idSujetSubmit" class="NomSujet link" value="<?php echo $sujet->getNomSujet() ?>" />
     </form>
 <?php
+echo "<div><h>Nombre de commentaires : ".SujetManager::countComs($sujet->getIdSujet())."</h></div>";
     foreach ($users as $user)
     {
         if ($user->getIdUtilisateur() == $sujet->getIdUtilisateur())
         {
-            echo "<h>Ecrit par :".$user->getPseudo()."</h>";
+            echo "<h>Ecrit par : ".$user->getPseudo()."</h>";
         }
     }
-    echo "<div class='Date'> <h>Publié le :".$sujet->getDateSujet()."</h></div>";
+    echo "<div class='Date'> <h>Publié le : ".$sujet->getDateSujet()."</h></div>";
     ?>
     <form class="new" method="POST" action="SupprSujet.php">
         <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
-        <input class="link" type="submit" value="Supprimer" />
+        <input type="submit" value="Supprimer" />
     </form>
 </div>
 <?php

@@ -51,7 +51,12 @@
                         if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                         {
                             echo "<div class='lateral'>";
-                            echo    "<div><h3>".$user->getPseudo()."</h3></div>";
+                            ?>
+                            <form method="GET" action="OptionsProfil.php">
+                                <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
+                                <input class="pseudo link" type="submit" value="<?php echo $user->getPseudo()?>"/>
+                            </form>
+                            <?php
                             echo    "<div><img class='pdp' src='".$user->getCheminPhoto()."'></div>";
                             echo "</div>";
                         }
@@ -101,6 +106,14 @@
                 header("Location : PageSujet.php");
             }
 
+        }
+        else if (empty($_GET["idSujet"]))
+        {
+            ?>
+            <h> La page que vous avez demandé n'est pas disponible ou le sujet en question à été supprimé.</h>
+            <a href="index.php"> Retour à l'accueil </a>
+            <?php
+            exit;
         }
         
     }

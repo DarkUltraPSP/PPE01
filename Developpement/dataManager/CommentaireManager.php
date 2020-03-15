@@ -67,4 +67,5 @@ class CommentaireManager {
         $state->bindParam(2, $idCom);
         $state->execute();
     }
+    
 }

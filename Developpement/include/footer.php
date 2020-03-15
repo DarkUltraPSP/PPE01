@@ -5,7 +5,6 @@
 
             </div> <!--Ferme div block-->
             <div class="lateral">
-                <h>C'est la pub</h>
             </div> <!--Ferme div lateral-->
         </div>
 <footer>

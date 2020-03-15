@@ -107,4 +107,21 @@ class SujetManager
         $state->execute();
     }
     
+    public static function countComs($idSujet)
+    {
+        $login = DatabaseLinker::getConnexion();
+        
+        $state = $login->prepare("SELECT COUNT(idCommentaire) AS nbCom FROM Commentaire INNER JOIN Sujet on Commentaire.idSujet = Sujet.idSujet WHERE Commentaire.idSujet = ?");
+        
+        $state->bindParam(1, $idSujet);
+        $state->execute();
+        
+        $resultats = $state->fetchAll();
+        
+        foreach($resultats as $lineResultat)
+        {
+            $nbCommentaires = $lineResultat['nbCom'];
+        }
+        return $nbCommentaires;
+    }
 }

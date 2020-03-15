@@ -59,13 +59,9 @@
 
         }
 
-    ?>    
-<div class="contour">
-    <p class="titre">------------------Inscription------------------</p>
-    <div>
-
+    ?>
+<div>
     <form class="bloc" method="POST" action="insertUser.php">
-        <img class="photoProfil" src="" width="150" height="150"/>
         <div class="info">
             <input class="details" type="text" name="pseudo" placeholder="Pseudo"/>
             <input class="details" type="text" name="mail" placeholder="Adresse e-mail" />
@@ -77,6 +73,8 @@
                 <option> Homme </option>
                 <option> Femme </option>
             </select>
+                <option> Hélicoptère d'attaque </option>
+            <input type="hidden" name="pdp" value="UserImage/utilisateur.png"/>
         </div>
     </div>
    
