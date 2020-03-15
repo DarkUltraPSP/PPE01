@@ -7,7 +7,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="css/connexion.css" media="all"/>
 <div class="bloc">
-    <p class="titre">Connexion :</p>
+    <p class="titre">Connexion</p>
     <div class="interieur">
         <form method="POST" action="Connexion.php">
             <p class="titre2">Pseudo :</p>
