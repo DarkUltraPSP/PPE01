@@ -23,3 +23,32 @@
     display: flex;
     justify-content: end;
 }
+
+.titre
+{
+    border-bottom:1px solid black;
+    margin:20px;
+    padding-top:0px;
+}
+.blocGauche
+{
+    width:80%;
+    height:100%;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    
+}
+.bloc
+{
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+.blocDroit
+{
+    width:20%;
+    height:100%;
+    margin-right: 0px;
+    margin-top:0px;
+    
+}
