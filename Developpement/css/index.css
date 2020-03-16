@@ -46,3 +46,22 @@ body
     display: flex;
     justify-content: end;
 }
+
+.block
+{
+
+    /*background-color:lightsteelblue;*/
+    margin-bottom:20px;
+}
+
+.titre
+{
+    border-bottom:1px solid black;
+    margin:20px;
+    font-size:40px;
+}
+.sujet
+{
+    border-bottom:1px solid black;
+    margin-bottom:10px;
+}

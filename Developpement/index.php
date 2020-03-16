@@ -3,9 +3,12 @@ include_once "include/header.php";
 if(isset($_SESSION['idUser']))
 {
 ?>
+<link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
+<p class="titre">Accueil</p>
 <form class="new" method="POST" action="NewSujet.php">
     <input type="hidden" value="" name="idUser">
     <input class="link" type="submit" value="Nouveau Sujet"/>
+    
 </form>
 <?php
 }
@@ -13,7 +16,7 @@ if(isset($_SESSION['idUser']))
     {
         echo '<div class="border">'; //Debut div border
         ?>
-        <form method='GET' action='PageSujet.php'>
+        <form class="sujet" method='GET' action='PageSujet.php'>
             <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
             <input type="submit" name="idSujetSubmit" class="NomSujet link" value="<?php echo $sujet->getNomSujet() ?>" />
         </form>
