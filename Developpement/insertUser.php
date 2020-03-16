@@ -1,15 +1,9 @@
 <?php
 include_once 'include/header.php';
 
-if (!empty($_POST['pseudo']))
-{
     $pseudo = $_POST['pseudo'];
     $mail = $_POST['mail'];
-}
 
-function testPseudo($pseudo, $mail)
-{
-    $users = UsersManager::findAllUsers();
     $testPseudo = true;
     foreach ($users as $user)
     {
@@ -18,10 +12,8 @@ function testPseudo($pseudo, $mail)
             $testPseudo = false;
         }
     }
-    return $testPseudo;
-}
-
-if (!empty($_POST['pseudo']) && !empty($_POST['mail']) && !empty($_POST['password']) && !empty($_POST['dateNaissance']) && !empty($_POST['sexe']) && !empty($_POST['pdp']) && testPseudo($_POST['pseudo'],$_POST['mail']) == true)
+    
+if ($testPseudo == true)
 {
     $user = new User();
     $user->setPseudo($_POST['pseudo']);
@@ -43,15 +35,14 @@ if (!empty($_POST['pseudo']) && !empty($_POST['mail']) && !empty($_POST['passwor
         $user->setCheminPhoto("UserImage/attackHelico.jpg");
     }
     UsersManager::insertUser($user);
+    header("Location: Connexion.php");
 }
-else 
+else if ($testPseudo == false)
 {
     echo "<p>Ce nom d'utilisateur est deja pris. </p>";
     echo "<p> Vous allez être redirigé vers la page d'inscription dans 3 secondes. </p>";
-    ?><META HTTP-EQUIV="Refresh" CONTENT="3; URL=Connexion.php"><?php
-    header("Location: Connexion.php");
+    ?><META HTTP-EQUIV="Refresh" CONTENT="5; URL=Connexion.php"><?php
+    header("Location: Inscription.php");
     exit;
 
 }
-
-header("Location: Connexion.php");

@@ -66,6 +66,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                             ?>
                             <img class="pdpProfil" src="<?php echo $user->getCheminPhoto();?>" >
                             <div class="Settings">
+                                <input type="hidden" value="<?php echo $user->getIdUtilisateur(); ?>" name="idUser"/>
                                 <input type="submit" value="<?php echo $user->getPseudo();?>" class="optProfil link"/>
                             <?php
                         }
