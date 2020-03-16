@@ -1,14 +1,18 @@
 <?php
 include_once 'include/header.php';
-$page = 'AllSujets';
-?>
 
+?>
 <link rel="stylesheet" type="text/css" href="css/AllSujets.css" media="all"/>
+<?php
+if(isset($_SESSION['idUser']))
+{
+?>
 <form class="new" method="POST" action="NewSujet.php">
     <input type="hidden" value="" name="idUser">
     <input class="link" type="submit" value="Nouveau Sujet"/>
 </form>
 <?php
+}
 foreach ($sujets as $sujet)
 {
 ?>
@@ -34,7 +38,7 @@ foreach ($sujets as $sujet)
             </div>
             <div class="blocDroit">
                 <?php
-                if ($_SESSION['idAdmin']==1)
+                if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1)
                 {
                 ?>
                     <form class="new" method="POST" action="SupprSujet.php">

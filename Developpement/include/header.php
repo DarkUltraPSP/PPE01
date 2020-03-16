@@ -42,13 +42,13 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                 <img src="image/logo.png" class="logo">
             </div>
             <div class="nomForum">
-                <a href="index.php"><p> Nom du Forum </p></a>
+                <a href="index.php"><p class="color"> Nom du Forum </p></a>
             </div>
             <?php
             if (empty($_SESSION['login']))
             {
                 ?>
-                <div class="boutonPosition">
+                <div class="Profil Settings">
                     <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
                     <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
                 </div>

@@ -16,10 +16,14 @@ header
 {
     display: flex;
     justify-content: space-around;
-    font-size: 200%;
-    text-decoration: underline;
-    color : white;
     width: 70%;
+}
+
+.color
+{
+    color: white;
+    text-decoration:underline;
+    font-size: 200%;
 }
 
 .Profil
