@@ -38,24 +38,42 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     </head>
     <body>
         <header>
-            <img src="image/logo.png" class="logo"></a>
-            <a href="index.php"><p class="nomForum"> Nom du Forum </p></a>
+            <div class="divLogo">
+                <img src="image/logo.png" class="logo">
+            </div>
+            <div class="nomForum">
+                <a href="index.php"><p class="color"> Nom du Forum </p></a>
+            </div>
             <?php
             if (empty($_SESSION['login']))
             {
-            ?>
-            <div class="boutonPosition">
-                <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
-                <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
-            </div>
-            <?php
+                ?>
+                <div class="Profil Settings">
+                    <a href="Connexion.php"><input type="button" value="Connexion" class="bouton"/></a>
+                    <a href="inscription.php"><input type="button" value="Inscription" class="bouton"/></a>
+                </div>
+                <?php
             }
             else
             {
             ?>
-            <div class="boutonPosition">
-                <a href="index.php?deco=true"><input type="button" value="Deconnexion" class="bouton"/></a>
-            </div>
+                <form method="GET" action="OptionsProfil.php" class="Profil">
+                    <?php
+                    foreach ($users as $user)
+                    {
+                        if ($_SESSION['idUser'] == $user->getIdUtilisateur())
+                        {
+                            ?>
+                            <img class="pdpProfil" src="<?php echo $user->getCheminPhoto();?>" >
+                            <div class="Settings">
+                                <input type="submit" value="<?php echo $user->getPseudo();?>" class="optProfil link"/>
+                            <?php
+                        }
+                    }
+                    ?>
+                    <a href="index.php?deco=true"><input type="button" value="Deconnexion" class="bouton"/></a>
+                            </div>
+                </form>
             <?php
             }
             ?>
@@ -77,10 +95,3 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
             <div class="lateral">
             </div>
             <div class="block">
-                <?php
-                if (!empty($_SESSION))
-                {
-                    echo "<pre>";
-                    print_r($_SESSION);
-                    echo "</pre>";
-                }
