@@ -101,8 +101,8 @@
                     <div class="newCom">
                         <form method="POST" action="insertCom.php" class="inputCom">
                             <textarea name="content" placeholder="Ecrire un commentaire" class="inputCom" ></textarea>
-                            <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet" />
-                            <input type="text" name="idUtilisateur" placeholder="Mettez votre idUtilisateur" />
+                            <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet" />
+                            <input type="hidden" value="<?php echo $_SESSION['idUser']; ?>" name="idUtilisateur" />
                             <input name = "rep" type="submit" value="Repondre"/>
                         </form>
                     </div>
