@@ -33,18 +33,18 @@ foreach ($sujets as $sujet)
                 ?>
             </div>
             <div class="blocDroit">
-                //<?php
-//                if ($_SESSION['idAdmin']==1)
-//                {
-//                ?>
+                <?php
+                if ($_SESSION['idAdmin']==1)
+                {
+                ?>
                     <form class="new" method="POST" action="SupprSujet.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                     <input type="submit" value="Supprimer" />
                     </form>
-                //<?php        
-//                }
+                <?php        
+                }
                 
-//                ?>
+                ?>
             </div>
         </div>
 </div>
