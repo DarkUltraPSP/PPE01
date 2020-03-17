@@ -23,6 +23,7 @@ class UsersManager
             $user->setBan($lineResultat["ban"]);
             $user->setRaisonBan($lineResultat["raisonBan"]);
             $user->setBiographie($lineResultat["biographie"]);
+            $user->setDateInscription($lineResultat["dateInscription"]);
         }
         return $user;
     }
@@ -31,7 +32,7 @@ class UsersManager
     {
         $users = new User();
         $login = dataBaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Utilisateur");
+        $state = $login->prepare("SELECT * FROM Utilisateur ORDER BY dateInscription");
         $tabUser = [];
         $state->execute();
         $resultats=$state->fetchAll();
