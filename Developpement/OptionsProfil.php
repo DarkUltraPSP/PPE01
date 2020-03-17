@@ -2,7 +2,7 @@
 
 include_once 'include/header.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/OptionsProfil" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/OptionsProfil.css" media="all"/>
 <?php
 
 if (!empty($_GET['idUser']))
@@ -42,7 +42,8 @@ if (!empty($_GET['idUser']))
                 <label> Biographie : </label>
                 <div class="textBio">
                     <?php 
-                    if(!empty($user->getBiographie()))
+                    $bio = $user->getBiographie();
+                    if (!empty($bio))
                     {
                         echo $user->getBiographie();
                     }
