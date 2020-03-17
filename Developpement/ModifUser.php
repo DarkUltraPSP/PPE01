@@ -20,6 +20,17 @@ if (!empty($_POST['pathPhoto']))
     echo "Formulaire d'envoie de fichiers";
 }
 
+if (!empty($_POST['bio']))
+{
+    ?>
+    <form method="POST" action="ModifUserSender.php">
+        <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
+        <input type="text" value="<?php echo $_POST['bio']; ?>" name="bio" placeholder="Entrez un nouveau pseudo"/>
+        <input type="submit" value="Confirmer"/>
+    </form>
+<?php
+}
+
 if (!empty($_POST['dateNaissance']))
 {
     ?>

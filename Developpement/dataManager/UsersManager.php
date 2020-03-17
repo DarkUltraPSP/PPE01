@@ -72,26 +72,37 @@ class UsersManager
     public static function modifUser($user)
     {
         $login = DatabaseLinker::getConnexion();
+        
         $idUser = $user->getIdUtilisateur();
         $pseudo = $user->getPseudo();
+        $bio = $user->getBiographie();
         $password = $user->getMotDePasse();
         $dateNaissance = $user->getDateNaissance();
         $mail = $user->getMail();
+        
         if(!empty($pseudo))
         {
             $state = $login->prepare("UPDATE Utilisateur SET pseudo = ? WHERE idUtilisateur = ?");
             $state->bindParam(1, $pseudo);
         }
+        if (!empty($bio))
+        {
+            $state = $login->prepare("UPDATE Utilisateur SET biographie = ? WHERE idUtilisateur = ?");
+            $state->bindParam(1, $bio);
+        }
+            
         if(!empty($dateNaissance))
         {
             $state = $login->prepare("UPDATE Utilisateur SET dateNaissance = ? WHERE idUtilisateur = ?");
             $state->bindParam(1, $dateNaissance);
         }
+        
         if(!empty($mail))
         {
             $state = $login->prepare("UPDATE Utilisateur SET mail = ? WHERE idUtilisateur = ?");
             $state->bindParam(1, $mail);
         }
+        
         if(!empty($password))
         {
             $state = $login->prepare("UPDATE Utilisateur SET password = ? WHERE idUtilisateur = ?");

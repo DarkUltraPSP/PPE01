@@ -12,6 +12,11 @@ if(!empty($_POST['idUser']))
         $user->setPseudo($_POST['pseudo']);
     }
 
+    if (!empty($_POST['bio']))
+    {
+        $user->setBiographie($_POST['bio']);
+    }
+        
     if (!empty($_POST['dateNaissance']))
     {
         $user->setDateNaissance($_POST['dateNaissance']);
