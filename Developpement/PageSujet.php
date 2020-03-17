@@ -103,7 +103,7 @@
                                 ?>
                                     <form method="POST" action="bannir.php">
                                         <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
-                                        <input type="hidden" value="<?php echo $user-> getBan(); ?>" name="ban"/>
+                                        <input type="hidden" value="<?php echo $user->getBan(); ?>" name="isBan"/>
                                         <input type="hidden" value="<?php echo $com->getIdUtilisateur(); ?>" name="idUser"/>
                                         <input type="submit" value="<?php if ($user->getBan() == 0) {echo 'Bannir';} else {echo 'Debannir';} ?>"/>
                                     </form>
