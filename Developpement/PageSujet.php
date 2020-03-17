@@ -94,14 +94,35 @@
                             <input type="submit" value="Modifier"/>
                         </form>
                         <?php
-                        if (isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1)
+                        if ($_SESSION['isAdmin'] == 1)
                         {
-                        ?>
-                            <form method="POST" action="bannir.php">
-                                <input type="hidden" value="<?php $com->getIdUtilisateur(); ?>" name="idUser"/>
-                                <input type="submit" value="Bannir"/>
-                            </form>
-                        <?php
+                            foreach ($users as $user)
+                            {
+                                if ($user->getBan() == 0)
+                                {
+                                    if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
+                                    {
+                                ?>
+                                    <form method="POST" action="bannir.php">
+                                        <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
+                                        <input type="hidden" value="<?php echo $user-> getBan(); ?>" name="ban"/>
+                                        <input type="hidden" value="<?php echo $com->getIdUtilisateur(); ?>" name="idUser"/>
+                                        <input type="submit" value="Bannir"/>
+                                    </form>
+                                <?php
+                                    }else if ($user->getBan() == 1)
+                                    {
+                                    ?>
+                                        <form method="POST" action="bannir.php">
+                                            <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
+                                            <input type="hidden" value="<?php echo $user->getBan();?>" name="ban"/>
+                                            <input type="hidden" value="<?php echo $com->getIdUtilisateur();?>" name="idUser"/>
+                                            <input type="submit" value="Debannir"/>
+                                        </form>
+                                    <?php
+                                    }
+                                }
+                            }
                         }
                     }
                     echo "</div>";
@@ -147,4 +168,3 @@
 
 <?php
     include_once 'include/footer.php';
-?>

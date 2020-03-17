@@ -136,12 +136,20 @@ class UsersManager
         return $nbCommentaires;
     }
     
-    public static function banUser($idUser)
+    public static function banUser($idUser, $ban)
     {
         $login = DatabaseLinker::getConnexion();
-        $ban = true;
         
-        $state = $login->prepare("UPDATE Utilisateur SET ban = ? WHERE idUtilisateur = ?");
+        if ($ban == 0)
+        {
+            $ban = 1;
+        }
+        else if ($ban == 1)
+        {
+            $ban = 0;
+        }
+        
+        $state = $login->prepare("UPDATE Utilisateur SET ban = ? WHERE idUtilisateur = ?");    
         $state->bindParam(1, $ban);
         $state->bindParam(2, $idUser);
         
