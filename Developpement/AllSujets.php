@@ -7,10 +7,12 @@ include_once 'include/header.php';
 if(isset($_SESSION['idUser']))
 {
 ?>
-<form class="new" method="POST" action="NewSujet.php">
-    <input type="hidden" value="" name="idUser">
-    <input class="link" type="submit" value="Nouveau Sujet"/>
-</form>
+<div>
+    <form class="new" method="POST" action="NewSujet.php">
+        <input type="hidden" value="" name="idUser">
+        <input type="submit" value="Nouveau Sujet"/>
+    </form>
+</div>
 <?php
 }
 foreach ($sujets as $sujet)

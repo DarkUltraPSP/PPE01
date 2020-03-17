@@ -4,7 +4,7 @@ if(isset($_SESSION['idUser']))
 {
 ?>
 <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
-<p class="titre">Accueil</p>
+<p class="titreAccueil">Accueil</p>
 <form class="new" method="POST" action="NewSujet.php">
     <input type="hidden" value="" name="idUser">
     <div class="new">

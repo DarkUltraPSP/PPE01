@@ -6,17 +6,10 @@
 
 .Sujet
 {
+    box-shadow: 0 0 10px #00000070;
+    transition: transform .2s;
     margin: 10px;
     padding: 10px;
-    border-top-width: 1px;
-    border-top-style: solid;
-    border-right-width: 1px;
-    border-right-style: solid;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    border-left-width: 1px;
-    border-left-style: solid;
-    transition: transform .2s;
 }
 .Sujet:hover
 {
@@ -32,8 +25,6 @@
 .titre
 {
     border-bottom:1px solid black;
-    margin:20px;
-    padding-top:0px;
 }
 .blocGauche
 {
@@ -45,8 +36,8 @@
 }
 .bloc
 {
+    display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
 
 }
 .blocDroit
