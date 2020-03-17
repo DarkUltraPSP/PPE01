@@ -12,7 +12,7 @@ if (!empty($_GET['idUser']))
     {
         if ($_GET['idUser'] == $user->getIdUtilisateur())
         {
-            if ($user->getBan()==1)
+            if ($user->getBan()==0)
             {
             ?>
 <div class="all">
@@ -35,7 +35,18 @@ if (!empty($_GET['idUser']))
                 <input class="btn" type="submit" value="Modifer photo de profil"/>
             </form>
         </div>
-        <form class="form column" method="POST" action="ModifUser.php">
+        <form class="form middle" method="POST" action="ModifUser.php">
+            <label> Biographie : </label>
+            <?php
+            if (!empty($user->getBiographie()))
+            {
+                echo $user->getBiographie();
+            }
+            else
+            {
+                echo "<p> Aucune biographie </p>";
+            }
+            ?>
             <label> Date de Naissance : </label>
             <?php
             echo $user->getDateNaissance();
@@ -48,7 +59,7 @@ if (!empty($_GET['idUser']))
             echo "<p> Nombre de commentaires postés : ".UsersManager::countCommentaires($_GET['idUser'])."</p>";
             ?>
         </form>
-        <div class="column">
+        <div class="cote">
             <form class="form column" method="POST" action="ModifUser.php">
                 <label> Adresse e-mail : </label>
                 <?php
@@ -68,7 +79,7 @@ if (!empty($_GET['idUser']))
 </div>
 <?php
             }
-            else if ($user->getBan()==0)
+            else if ($user->getBan()==1)
             {
                 ?>
                 <h> Cet utilisateur à été banni. </h>

@@ -6,9 +6,6 @@ include_once 'include/header.php';
         $idSujet = $_POST['idSujet'];
         $content = $_POST['modif'];
         $idCom = $_POST['idCom'];
-        echo $idSujet;
-        echo $content;
-        echo $idCom;
         CommentaireManager::modifCommentaire($content,$idCom);
         header("Location: PageSujet.php?idSujet=$idSujet");
     }

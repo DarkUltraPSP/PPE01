@@ -12,9 +12,11 @@ class User
     private $mail;
     private $isAdmin;
     private $ban;
+    private $raisonBan;
+    private $biographie;
 
     function getIdUtilisateur() {
-    return $this->idUtilisateur;
+        return $this->idUtilisateur;
     }
 
     function getPseudo() {
@@ -32,7 +34,7 @@ class User
     function getDateInscription() {
         return $this->dateInscription;
     }
-    
+
     function getCheminPhoto() {
         return $this->cheminPhoto;
     }
@@ -44,13 +46,21 @@ class User
     function getMail() {
         return $this->mail;
     }
-    
+
     function getIsAdmin() {
         return $this->isAdmin;
     }
 
     function getBan() {
         return $this->ban;
+    }
+
+    function getRaisonBan() {
+        return $this->raisonBan;
+    }
+
+    function getBiographie() {
+        return $this->biographie;
     }
 
     function setIdUtilisateur($idUtilisateur) {
@@ -68,11 +78,11 @@ class User
     function setDateNaissance($dateNaissance) {
         $this->dateNaissance = $dateNaissance;
     }
-    
+
     function setDateInscription($dateInscription) {
         $this->dateInscription = $dateInscription;
     }
-    
+
     function setCheminPhoto($cheminPhoto) {
         $this->cheminPhoto = $cheminPhoto;
     }
@@ -91,6 +101,14 @@ class User
 
     function setBan($ban) {
         $this->ban = $ban;
+    }
+
+    function setRaisonBan($raisonBan) {
+        $this->raisonBan = $raisonBan;
+    }
+
+    function setBiographie($biographie) {
+        $this->biographie = $biographie;
     }
 
 }

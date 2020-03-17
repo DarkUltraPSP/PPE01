@@ -37,6 +37,7 @@
     border-style: double;
     border-color: black;
     background-color: lightsteelblue;
+    border-radius: 15px;
 }
 .titre
 {
@@ -56,6 +57,8 @@
     margin-right:20%;
     text-align:center;
     font-size:20px;
+    border-radius: 15px;
+    
 }
 
 .contour

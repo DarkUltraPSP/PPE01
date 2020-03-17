@@ -36,6 +36,15 @@
                 </form>
             <?php
             }
+            if (isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1)
+            {
+                ?>
+                <form class="new" method="POST" action="bannir.php">
+                    <input type="hidden" value="<?php $sujet->getIdUtilisateur(); ?>" name="idUser"/>
+                    <input type="submit" value="Bannir"/>
+                </form>
+                <?php
+            }
             echo "</div>";
             
             echo "<div>";
@@ -84,7 +93,16 @@
                             <input type="hidden" value="<?php echo $com->getContenuCommmentaire();?>" name="content" />
                             <input type="submit" value="Modifier"/>
                         </form>
-                    <?php
+                        <?php
+                        if (isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1)
+                        {
+                        ?>
+                            <form method="POST" action="bannir.php">
+                                <input type="hidden" value="<?php $com->getIdUtilisateur(); ?>" name="idUser"/>
+                                <input type="submit" value="Bannir"/>
+                            </form>
+                        <?php
+                        }
                     }
                     echo "</div>";
                     echo "</div>";

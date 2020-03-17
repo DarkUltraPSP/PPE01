@@ -28,13 +28,14 @@
 }
 
 
-.column
+.middle
 {
     display: inline-flex;
     flex-direction: column;
     margin: 20px;
     align-items: center;
     flex-wrap: wrap;
+    width: 50%;
 }
 
 .img
@@ -51,5 +52,10 @@
 
 .pdp
 {
-    
+    width: 25%;
+}
+
+.cote
+{
+    width: 25%;
 }

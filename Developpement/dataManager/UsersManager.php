@@ -21,6 +21,8 @@ class UsersManager
             $user->setMail($lineResultat["mail"]);
             $user->setIsAdmin($lineResultat["isAdmin"]);
             $user->setBan($lineResultat["ban"]);
+            $user->getRaisonBan($lineResultat["raisonBan"]);
+            $user->getBiographie($lineResultat["biographie"]);
         }
         return $user;
     }
@@ -134,4 +136,15 @@ class UsersManager
         return $nbCommentaires;
     }
     
+    public static function banUser($idUser)
+    {
+        $login = DatabaseLinker::getConnexion();
+        $ban = true;
+        
+        $state = $login->prepare("UPDATE Utilisateur SET ban = ? WHERE idUtilisateur = ?");
+        $state->bindParam(1, $ban);
+        $state->bindParam(2, $idUser);
+        
+        $state->execute();
+    }
 }

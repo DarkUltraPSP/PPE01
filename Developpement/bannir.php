@@ -1,6 +1,7 @@
 <?php
+include_once 'include/header.php';
 
-class bannir 
+if(!empty($POST['ban']) && !empty($POST['idUser']))
 {
-
+    UsersManager::banUser($POST['idUser']);
 }
