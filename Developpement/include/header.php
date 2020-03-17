@@ -24,6 +24,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     $sujets = SujetManager::findAllSujet();
     $commentaires = Commentairemanager::findAllCommentaires();
     $users = UsersManager::findAllUsers();
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
