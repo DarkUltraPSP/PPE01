@@ -2,7 +2,7 @@
 
 include_once 'include/header.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/OptionsProfil.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/OptionsProfil" media="all"/>
 <?php
 
 if (!empty($_GET['idUser']))
@@ -16,14 +16,16 @@ if (!empty($_GET['idUser']))
             {
             ?>
 <div class="all">
-    <form class="form column" method="POST" action="ModifUser.php">
+    <div class="pseudo">
         <?php
-        echo "<div class='pseudo'>".$user->getPseudo()."</div>";
+            echo $user->getPseudo();
         ?>
-        <input type="hidden" value="<?php echo $user->getPseudo() ?>" name="pseudo"/>
+        <form class="form column" method="POST" action="ModifUser.php">
+    </div>   
+        <input class="titre" type="hidden" value="<?php echo $user->getPseudo() ?>" name="pseudo"/>
         <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
-        <input class="btn" type="submit" value="Modifer pseudo"/>
-    </form>
+        <input class="btn" type="submit" value="Modifier pseudo"/>
+        </form>
     <div class="org">
         <div class="pdp">
             <form class="form column" method="POST" action="ModifUser.php">
@@ -32,33 +34,41 @@ if (!empty($_GET['idUser']))
                 ?>
                 <input type="hidden" value="<?php echo $user->getCheminPhoto() ?>" name="pathPhoto"/>
                 <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
-                <input class="btn" type="submit" value="Modifer photo de profil"/>
+                <input class="btn" type="submit" value="Modifier photo de profil"/>
             </form>
         </div>
-        <form class="form middle" method="POST" action="ModifUser.php">
-            <label> Biographie : </label>
-            <?php
-//            if (!empty($user->getBiographie()))
-//            {
-//                echo $user->getBiographie();
-//            }
-//            else
-//            {
-                echo "<p> Aucune biographie </p>";
-//            }
-            ?>
-            <label> Date de Naissance : </label>
-            <?php
-            echo $user->getDateNaissance();
-            ?>
-            <input type="hidden" value="<?php echo $user->getDateNaissance() ?>" name="dateNaissance"/>
-            <input class="btn" type="submit" value="Modifer date de naissance"/>
-            <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
-            <?php
-            echo "<p> Nombre de sujet postés : ".UsersManager::countSujets($_GET['idUser'])."</p>";
-            echo "<p> Nombre de commentaires postés : ".UsersManager::countCommentaires($_GET['idUser'])."</p>";
-            ?>
-        </form>
+        <div class="middle">
+            <form method="POST" action="ModifUser.php">
+                <label> Biographie : </label>
+                <div class="textBio">
+                    <?php 
+                    if(!empty($user->getBiographie()))
+                    {
+                        echo $user->getBiographie();
+                    }
+                    else
+                    {
+                        echo "<p> Aucune biographie </p>";
+                    }
+                    ?>
+                </div>
+                <div class ="dateNaissance">
+                    <label> Date de Naissance : </label>
+                    <?php
+                    echo $user->getDateNaissance();
+                    ?>
+                    <input type="hidden" value="<?php echo $user->getDateNaissance() ?>" name="dateNaissance"/>
+                    <input class="btn" type="submit" value="Modifier"/>
+                    <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
+                </div>
+                <div class="stat">
+                    <?php
+                    echo "<p> Nombre de sujet postés : ".UsersManager::countSujets($_GET['idUser'])."</p>";
+                    echo "<p> Nombre de commentaires postés : ".UsersManager::countCommentaires($_GET['idUser'])."</p>";
+                    ?>
+                </div>
+            </form>
+        </div>
         <div class="cote">
             <form class="form column" method="POST" action="ModifUser.php">
                 <label> Adresse e-mail : </label>
@@ -83,6 +93,8 @@ if (!empty($_GET['idUser']))
             {
                 ?>
                 <h> Cet utilisateur à été banni. </h>
+                <h> Motif du bannissement : </h>
+                <?php echo $user->getRaisonBan(); ?>
                 <a href="index.php"> Retour à l'accueil </a>
                 <?php
                 include_once 'include/footer.php';

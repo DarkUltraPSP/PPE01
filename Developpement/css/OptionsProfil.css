@@ -16,8 +16,13 @@
 
 .pseudo
 {
-    font-size: 100px;
+    border-bottom:1px solid black;
+    margin:20px;
+    font-size:40px;
     font-weight: bold;
+    margin-top:30px;
+    width:80%;
+    text-align:center;
 }
 
 
@@ -41,14 +46,27 @@
 {
     max-width: 200px;
     margin: 5px;
+    align-items: flex-end;
 }
 
 .pdp
 {
     width: 25%;
+    margin-left: 20px;
 }
 
 .cote
 {
     width: 25%;
+}
+.textBio
+{
+   margin-top: 20px;
+   margin-bottom:20px;
+   border:1px solid black;
+}
+
+.stat
+{
+    
 }
