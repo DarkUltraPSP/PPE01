@@ -1,7 +1,11 @@
 <?php
 include_once 'include/header.php';
 
-if(!empty($POST['ban']) && !empty($POST['idUser']) && !empty($_POST['idSujet']))
+echo $_POST['ban'];
+echo $_POST['idUser'];
+echo $_POST['idSujet'];
+
+if(!empty($_POST['ban']) && !empty($_POST['idUser']) && !empty($_POST['idSujet']))
 {
     $idSujet = $_POST['idSujet'];
     

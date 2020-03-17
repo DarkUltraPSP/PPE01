@@ -98,29 +98,16 @@
                         {
                             foreach ($users as $user)
                             {
-                                if ($user->getBan() == 0)
+                                if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                                 {
-                                    if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
-                                    {
                                 ?>
                                     <form method="POST" action="bannir.php">
                                         <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
                                         <input type="hidden" value="<?php echo $user-> getBan(); ?>" name="ban"/>
                                         <input type="hidden" value="<?php echo $com->getIdUtilisateur(); ?>" name="idUser"/>
-                                        <input type="submit" value="Bannir"/>
+                                        <input type="submit" value="<?php if ($user->getBan() == 0) {echo 'Bannir';} else {echo 'Debannir';} ?>"/>
                                     </form>
                                 <?php
-                                    }else if ($user->getBan() == 1)
-                                    {
-                                    ?>
-                                        <form method="POST" action="bannir.php">
-                                            <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
-                                            <input type="hidden" value="<?php echo $user->getBan();?>" name="ban"/>
-                                            <input type="hidden" value="<?php echo $com->getIdUtilisateur();?>" name="idUser"/>
-                                            <input type="submit" value="Debannir"/>
-                                        </form>
-                                    <?php
-                                    }
                                 }
                             }
                         }
@@ -128,7 +115,6 @@
                     echo "</div>";
                     echo "</div>";
                 }
-                
             }
             
             echo "</div>";
