@@ -6,7 +6,7 @@ $users = UsersManager::findAllUsers();
     $idSujet = $_POST['idSujet'];
     $idUser = $_POST['idUser'];
     $ban = $_POST['isBan'];
-    $raisonBan;
+    $raisonBan = $_POST['raisonBan'];
     UsersManager::banUser($idUser, $ban, $raisonBan);
     
     header("Location: PageSujet.php?idSujet=$idSujet");

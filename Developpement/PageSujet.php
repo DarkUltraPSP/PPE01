@@ -101,7 +101,7 @@
                                 if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                                 {
                                 ?>
-                                    <form method="POST" action="bannir.php">
+                                    <form method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
                                         <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
                                         <input type="hidden" value="<?php echo $user->getBan(); ?>" name="isBan"/>
                                         <input type="hidden" value="<?php echo $com->getIdUtilisateur(); ?>" name="idUser"/>
