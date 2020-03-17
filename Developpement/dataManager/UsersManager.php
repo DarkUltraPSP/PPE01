@@ -21,8 +21,8 @@ class UsersManager
             $user->setMail($lineResultat["mail"]);
             $user->setIsAdmin($lineResultat["isAdmin"]);
             $user->setBan($lineResultat["ban"]);
-            $user->getRaisonBan($lineResultat["raisonBan"]);
-            $user->getBiographie($lineResultat["biographie"]);
+            $user->setRaisonBan($lineResultat["raisonBan"]);
+            $user->setBiographie($lineResultat["biographie"]);
         }
         return $user;
     }

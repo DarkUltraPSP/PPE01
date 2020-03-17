@@ -38,14 +38,14 @@ if (!empty($_GET['idUser']))
         <form class="form middle" method="POST" action="ModifUser.php">
             <label> Biographie : </label>
             <?php
-            if (!empty($user->getBiographie()))
-            {
-                echo $user->getBiographie();
-            }
-            else
-            {
+//            if (!empty($user->getBiographie()))
+//            {
+//                echo $user->getBiographie();
+//            }
+//            else
+//            {
                 echo "<p> Aucune biographie </p>";
-            }
+//            }
             ?>
             <label> Date de Naissance : </label>
             <?php
