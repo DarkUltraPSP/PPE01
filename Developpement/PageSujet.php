@@ -64,7 +64,7 @@
                         
                         if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                         {
-                            echo "<div class='lateral'>";
+                            echo "<div class='lateralCom'>";
                             ?>
                             <form method="GET" action="OptionsProfil.php">
                                 <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
@@ -79,7 +79,7 @@
                     echo "<div class='contenuCom'>";
                     echo    "<div><h>".$com->getContenuCommmentaire()."</h></div>";
                     echo "</div>";
-                    echo "<div class='lateral'>";
+                    echo "<div class='lateralCom'>";
                     echo "<div><h> Publié le ".$com->getDateCommentaire()."</h></div>";
                     if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $com->getIdUtilisateur())
                     {

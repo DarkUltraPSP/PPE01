@@ -1,10 +1,12 @@
 <?php
 include_once "include/header.php";
+?>
+<p class="titreAccueil">Accueil</p>
+<?php
 if(isset($_SESSION['idUser']))
 {
 ?>
 <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
-<p class="titreAccueil">Accueil</p>
 <form class="new" method="POST" action="NewSujet.php">
     <input type="hidden" value="" name="idUser">
     <div class="new">
