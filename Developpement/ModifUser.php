@@ -6,6 +6,10 @@ $idUser = $_POST['idUser'];
 
 if (!empty($_POST['pseudo']))
 {
+    foreach ($users as $user)
+    {
+        if ($_POST['pseudo'] != $user->gePseudo())
+        {
     ?>
     <form method="POST" action="ModifUserSender.php">
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
@@ -13,11 +17,28 @@ if (!empty($_POST['pseudo']))
         <input type="submit" value="Confirmer"/>
     </form>
     <?php
+        }
+        else if ($_POST['pseudo'] == $user->getPseudo())
+        {
+            echo "Ce pseudo est deja pris.";
+            echo "Vous allez être redirigé vers votre profil.";
+            ?>
+<META HTTP-EQUIV="Refresh" CONTENT="5; URL=OptionsProfil.php?idUser=<?php echo $idUser ?>"> 
+            <?php
+        }
+    }
 }
 
 if (!empty($_POST['pathPhoto']))
 {
-    echo "Formulaire d'envoie de fichiers";
+    ?>
+<!--<form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
+    <input type="hidden" value="<?php// echo $idUser; ?>" name="idUser"/>
+    <input type="file" id="idFichier" name="fichier"/>
+    <input type="submit" value="Valider"/>
+</form>-->
+
+    <?php
 }
 
 if (!empty($_POST['bio']))

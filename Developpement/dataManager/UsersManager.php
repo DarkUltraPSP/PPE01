@@ -110,6 +110,7 @@ class UsersManager
         }
         $state->bindParam(2, $idUser);
         $state->execute();
+        
     }
     
     public static function countSujets($idUser)

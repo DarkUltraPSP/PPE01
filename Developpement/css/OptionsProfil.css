@@ -53,6 +53,7 @@
 {
     width: 25%;
     margin-left: 20px;
+    display: flex;
 }
 
 .cote
@@ -66,7 +67,10 @@
    border:1px solid black;
 }
 
-.stat
+.form
 {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }

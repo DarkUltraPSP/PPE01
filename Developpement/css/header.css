@@ -33,6 +33,12 @@ header
     flex-direction: row;
     justify-content: space-around;
     padding: 5px;
+    transition: transform .2s;
+}
+
+.Profil:hover
+{
+    transform: scale(1.10); 
 }
 
 img

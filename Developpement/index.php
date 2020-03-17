@@ -7,8 +7,9 @@ if(isset($_SESSION['idUser']))
 <p class="titre">Accueil</p>
 <form class="new" method="POST" action="NewSujet.php">
     <input type="hidden" value="" name="idUser">
-    <input class="link" type="submit" value="Nouveau Sujet"/>
-    
+    <div class="new">
+        <input type="submit" value="Nouveau Sujet"/>
+    </div>
 </form>
 <?php
 }
@@ -35,7 +36,9 @@ if(isset($_SESSION['idUser']))
         ?>
             <form class="new" method="POST" action="SupprSujet.php">
                 <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
-                <input type="submit" value="Supprimer" />
+                <div class="new">
+                    <input type="submit" value="Supprimer" />
+                </div>
             </form>
         <?php
         }

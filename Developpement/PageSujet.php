@@ -19,6 +19,7 @@
             if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $sujet->getIdUtilisateur())
             {
             ?>
+<div class="adminCMD">
                 <form class="new" method="POST" action="closeSujet.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                     <input type="hidden" value="<?php echo $sujet->getCanRespond(); ?>" name="canRespond"/>
@@ -43,6 +44,7 @@
                     <input type="hidden" value="<?php $sujet->getIdUtilisateur(); ?>" name="idUser"/>
                     <input type="submit" value="Bannir"/>
                 </form>
+</div>
                 <?php
             }
             echo "</div>";

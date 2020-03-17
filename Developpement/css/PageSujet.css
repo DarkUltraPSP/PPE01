@@ -86,3 +86,9 @@ h3
 {
     width: 100%;
 }
+
+.adminCMD
+{
+    display: flex;
+    justify-content: flex-end;
+}

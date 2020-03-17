@@ -16,6 +16,11 @@
     border-bottom-style: solid;
     border-left-width: 1px;
     border-left-style: solid;
+    transition: transform .2s;
+}
+.Sujet:hover
+{
+    transform: scale(1.10); 
 }
 
 .new
