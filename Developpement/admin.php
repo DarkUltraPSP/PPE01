@@ -8,6 +8,7 @@ include_once 'include/header.php';
 if ($_SESSION['isAdmin']==1)
 {
 ?>
+<label> Liste des utilisateurs inscrits : </label>
 <div class="board">
 <table>
     <tr>
@@ -48,3 +49,5 @@ else
 {
     echo "Vous n'êtes pas autorisé a visualiser cette page";
 }
+
+include_once 'include/footer.php';

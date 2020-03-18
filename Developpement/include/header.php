@@ -35,7 +35,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
         <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="css/Organisation.css" media="all"/>
 
-        <link rel="icon" type="image/logo.png" href="images/logo.png" />
+        <link rel="icon" type="image/png" href="image/logo.ico" />
     </head>
     <body>
         <header>

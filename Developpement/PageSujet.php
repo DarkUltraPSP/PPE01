@@ -20,18 +20,18 @@
             if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $sujet->getIdUtilisateur())
             {
             ?>
-                <form class="new" method="POST" action="closeSujet.php">
+                <form class="btnAdmin" method="POST" action="closeSujet.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                     <input type="hidden" value="<?php echo $sujet->getCanRespond(); ?>" name="canRespond"/>
                     <input type="submit" value= "<?php if ($sujet->getCanRespond() == 1){ echo "Clore le sujet"; } else{ echo "Ouvrir le sujet"; }?>" />
                 </form>
-                <form class="new" method="POST" action="ModifSujetForm.php">
+                <form class="btnAdmin" method="POST" action="ModifSujetForm.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet" />
                     <input type="hidden" value="<?php echo $sujet->getNomSujet();?>" name="nomSujet" />
                     <input type="hidden" value="<?php echo $sujet->getContenuSujet();?>" name="content" />
                     <input type="submit" value="Modifier"/>
                 </form>
-                <form class="new" method="POST" action="SupprSujet.php">
+                <form class="btnAdmin" method="POST" action="SupprSujet.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                     <input type="submit" value="Supprimer" />
                 </form>
@@ -44,7 +44,7 @@
                         if ($sujet->getIdUtilisateur() == $user->getIdUtilisateur())
                         {
                         ?>
-<form method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
+<form class="btnAdmin" method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
     <input type="hidden" value="<?php echo $user->getIdUtilisateur(); ?>" name="idUser"/>
     <input type="hidden" value="<?php echo $user->getBan();?>" name="isBan"/>
@@ -97,12 +97,12 @@
                     if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $com->getIdUtilisateur())
                     {
                     ?>
-                        <form method="POST" action="SupprCommentaire.php">
+                        <form class="btnAdmin" method="POST" action="SupprCommentaire.php">
                             <input type="hidden" value="<?php echo $com->getIdCommentaire();?>" name="idCom" />
                             <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
                             <input type="submit" value="Supprimer"/>
                         </form>
-                        <form method="POST" action="ModifComForm.php">
+                        <form class="" btnAdminmethod="POST" action="ModifComForm.php">
                             <input type="hidden" value="<?php echo $com->getIdCommentaire();?>" name="idCom" />
                             <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
                             <input type="hidden" value="<?php echo $com->getContenuCommmentaire();?>" name="content" />
@@ -116,7 +116,7 @@
                                 if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                                 {
                                 ?>
-                                    <form method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
+                                    <form class="btnAdmin" method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
                                         <input type="hidden" value="<?php echo $sujet->getIdSujet();?>" name="idSujet"/>
                                         <input type="hidden" value="<?php echo $user->getBan(); ?>" name="isBan"/>
                                         <input type="hidden" value="<?php echo $com->getIdUtilisateur(); ?>" name="idUser"/>

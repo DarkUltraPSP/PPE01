@@ -13,3 +13,9 @@ th
 {
     height: 30px;
 }
+
+.board
+{
+    display: flex;
+    justify-content: center
+}

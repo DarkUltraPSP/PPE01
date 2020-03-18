@@ -32,11 +32,11 @@ if (!empty($_POST['pseudo']))
 if (!empty($_POST['pathPhoto']))
 {
     ?>
-<!--<form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
-    <input type="hidden" value="<?php// echo $idUser; ?>" name="idUser"/>
+<form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
+    <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
     <input type="file" id="idFichier" name="fichier"/>
     <input type="submit" value="Valider"/>
-</form>-->
+</form>
 
     <?php
 }

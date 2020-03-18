@@ -32,6 +32,11 @@ if(!empty($_POST['idUser']))
         $user->setMotDePasse($_POST['password']);
     }
     
+    if (!empty($_POST['fichier']))
+    {
+        
+    }
+    
     $user->setIdUtilisateur($idUser);
     
     UsersManager::modifUser($user);

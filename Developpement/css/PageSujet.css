@@ -92,3 +92,8 @@ h3
     display: flex;
     justify-content: flex-end;
 }
+
+.btnAdmin
+{
+    margin: 5px;
+}
