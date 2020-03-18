@@ -3,7 +3,7 @@
 ?>
 <link rel="stylesheet" type="text/css" href="css/footer.css" media="all"/>
 
-            </div> <!--Ferme div block-->
+            </div><!--Ferme div block-->
             <div class="lateral">
             </div> <!--Ferme div lateral-->
         </div>

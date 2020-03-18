@@ -1,0 +1,15 @@
+table
+{
+    border: thick double black;
+    padding: 10px;
+}
+
+tr
+{
+    margin: 20px;
+}
+
+th
+{
+    height: 30px;
+}

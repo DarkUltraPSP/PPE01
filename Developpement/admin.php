@@ -1,30 +1,48 @@
 <?php
 include_once 'include/header.php';
+?>
 
+<link rel="stylesheet" type="text/css" href="css/admin.css" media="all"/>
+
+<?php
 if ($_SESSION['isAdmin']==1)
 {
-    foreach($users as $user)
-    {
-        ?>
+?>
+
 <table>
     <tr>
-        
+        <th> Pseudo </th>
+        <th> Mail </th>
+        <th> Sexe </th>
+        <th> Date de Naissance </th>
+        <th> Date d'Inscription </th>
+        <th> Bannir </th>
     </tr>
-    <td>
-        
-    </td>
-</table>
-
-
-        echo '<pre>';
-        echo $user->getPseudo();
-        echo $user->getMail();
-        echo $user->getSexe();
-        echo $user->getDateNaissance();
-        echo $user->getDateInscription();
-        echo "</pre>";
+    
         <?php
-    }
+        foreach ($users as $user) 
+        {
+            echo "<tr>";
+            echo "<th>".$user->getPseudo()."</th>";
+            echo "<th>".$user->getMail()."</th>";
+            echo "<th>".$user->getSexe()."</th>";
+            echo "<th>".$user->getDateNaissance()."</th>";
+            echo "<th>".$user->getDateInscription()."</th>";
+            ?>
+            <th>
+                <form method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
+                    <input type="hidden" value="<?php echo $user->getBan(); ?>" name="isBan"/>
+                    <input type="hidden" value="<?php echo $user->getIdUtilisateur(); ?>" name="idUser"/>
+                    <input type="submit" value="<?php if ($user->getBan() == 0) {echo 'Bannir';} else {echo 'Debannir';} ?>"/>
+                </form>
+            </th>
+            <?php
+            echo "</tr>";
+        }
+        ?>
+    </table>
+
+<?php
 }
 else
 {
