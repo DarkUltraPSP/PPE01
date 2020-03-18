@@ -1,6 +1,7 @@
 <?php
 
 include_once 'include/header.php';
+
 if (isset($_POST['idSujet']))
 {
     $idSujet = $_POST['idSujet'];
@@ -24,4 +25,5 @@ $isBan = $_POST['isBan'];
     <input type="submit" value="Bannir">
 </form>
 <?php
+
 include_once 'include/footer.php';

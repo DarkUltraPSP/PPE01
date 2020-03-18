@@ -39,11 +39,21 @@
             }
             if (isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1)
             {
-                ?>
-                <form class="new" method="POST" action="bannir.php">
-                    <input type="hidden" value="<?php $sujet->getIdUtilisateur(); ?>" name="idUser"/>
-                    <input type="submit" value="Bannir"/>
-                </form>
+                    foreach ($users as $user)
+                    {
+                        if ($sujet->getIdUtilisateur() == $user->getIdUtilisateur())
+                        {
+                        ?>
+<form method="POST" <?php if ($user->getBan() == 0){ echo "action='RaisonBan.php'";} else{ echo "action='bannir.php'"; }?>>
+    <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
+    <input type="hidden" value="<?php echo $user->getIdUtilisateur(); ?>" name="idUser"/>
+    <input type="hidden" value="<?php echo $user->getBan();?>" name="isBan"/>
+    <input type="submit" value="<?php if ($user->getBan() == 0) {echo 'Bannir';} else {echo 'Debannir';} ?>"/>
+</form>
+                       <?php 
+                        }
+                    }
+                    ?>
                 <?php
             }
             echo "</div>";

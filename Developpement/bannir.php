@@ -14,8 +14,10 @@ if (isset($_POST['idSujet']))
 if (isset($idSujet))
 {
     header("Location: PageSujet.php?idSujet=$idSujet");
+    exit;
 }
 else if (isset($_SESSION['isAdmin']))
 {
     header("Location: admin.php");
+    exit;
 }
