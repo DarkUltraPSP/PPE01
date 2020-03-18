@@ -8,7 +8,7 @@ include_once 'include/header.php';
 if ($_SESSION['isAdmin']==1)
 {
 ?>
-
+<div class="board">
 <table>
     <tr>
         <th> Pseudo </th>
@@ -41,7 +41,7 @@ if ($_SESSION['isAdmin']==1)
         }
         ?>
     </table>
-
+</div>
 <?php
 }
 else

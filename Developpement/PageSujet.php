@@ -16,10 +16,10 @@
             echo    "<div><h1>".$sujet->getNomSujet()."</h1></div>";
             echo    "<div class='contenuSujet'>".$sujet->getContenuSujet()."</div>";
             echo    "<div class='date'><h> Publié le ".$sujet->getDateSujet()."</h></div>";
+            echo "<div class='adminCMD'>";
             if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $sujet->getIdUtilisateur())
             {
             ?>
-<div class="adminCMD">
                 <form class="new" method="POST" action="closeSujet.php">
                     <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
                     <input type="hidden" value="<?php echo $sujet->getCanRespond(); ?>" name="canRespond"/>
@@ -44,11 +44,10 @@
                     <input type="hidden" value="<?php $sujet->getIdUtilisateur(); ?>" name="idUser"/>
                     <input type="submit" value="Bannir"/>
                 </form>
-</div>
                 <?php
             }
             echo "</div>";
-            
+            echo "</div>";
             echo "<div>";
             echo "<div><h2> Commentaires : </h2></div>";
             
@@ -57,22 +56,26 @@
                 
                 if ($com->getIdArticle()== $sujet->getIdSujet())
                 {
-                    echo "<div class='com'>";
+                    ?>
+<div class='com'>
+<?php
                     
                     foreach ($users as $user)
                     {
                         
                         if ($user->getIdUtilisateur() == $com->getIdUtilisateur())
                         {
-                            echo "<div class='lateralCom'>";
                             ?>
-                            <form method="GET" action="OptionsProfil.php">
-                                <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
-                                <input class="pseudo link" type="submit" value="<?php echo $user->getPseudo()?>"/>
-                            </form>
+                            <div class='lateralCom'>
+                                <form method="GET" action="OptionsProfil.php">
+                                    <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
+                                    <input class="pseudo link" type="submit" value="<?php echo $user->getPseudo()?>"/>
+                                </form>
                             <?php
                             echo    "<div><img class='pdp' src='".$user->getCheminPhoto()."'></div>";
-                            echo "</div>";
+                            ?>
+                                </div>
+                            <?php
                         }
                     }
                     
@@ -115,10 +118,12 @@
                         }
                     }
                     echo "</div>";
-                    echo "</div>";
+                    ?>
+</div>
+<?php
+
                 }
             }
-            
             echo "</div>";
             if ($sujet->getCanRespond() == 1)
             {
@@ -153,6 +158,6 @@
         
     }
 ?>
-
+            
 <?php
     include_once 'include/footer.php';
