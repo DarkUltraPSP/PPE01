@@ -11,11 +11,14 @@ if (!empty($_POST['pseudo']))
         if ($_POST['pseudo'] != $user->gePseudo())
         {
     ?>
+    <link rel="stylesheet" type="text/css" href="css/ModifUser.css" media="all"/>
+    
     <form method="POST" action="ModifUserSender.php">
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
         <input type="text" value="<?php echo $_POST['pseudo']; ?>" name="pseudo" placeholder="Entrez un nouveau pseudo"/>
         <input type="submit" value="Confirmer"/>
     </form>
+
     <?php
         }
         else if ($_POST['pseudo'] == $user->getPseudo())
@@ -32,7 +35,8 @@ if (!empty($_POST['pseudo']))
 if (!empty($_POST['pathPhoto']))
 {
     ?>
-<form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
+<p class="titre"> Modification de votre photo de profil</p>
+<form class="bloc" method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
     <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
     <input type="file" id="idFichier" name="fichier"/>
     <input type="submit" value="Valider"/>
