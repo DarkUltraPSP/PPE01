@@ -37,7 +37,6 @@ if (!empty($_POST['pathPhoto']))
     <input type="file" id="idFichier" name="fichier"/>
     <input type="submit" value="Valider"/>
 </form>
-
     <?php
 }
 

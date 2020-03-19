@@ -102,7 +102,7 @@
                             <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
                             <input type="submit" value="Supprimer"/>
                         </form>
-                        <form class="" btnAdminmethod="POST" action="ModifComForm.php">
+                        <form class="btnAdmin" method="POST" action="ModifComForm.php">
                             <input type="hidden" value="<?php echo $com->getIdCommentaire();?>" name="idCom" />
                             <input type="hidden" value="<?php echo $com->getIdArticle();?>" name="idSujet" />
                             <input type="hidden" value="<?php echo $com->getContenuCommmentaire();?>" name="content" />

@@ -32,9 +32,11 @@ if(!empty($_POST['idUser']))
         $user->setMotDePasse($_POST['password']);
     }
     
-    if (!empty($_POST['fichier']))
+    if (!empty($_FILES['fichier']['tmp_name']))
     {
-        
+        $destination = "UserImage/";
+        move_uploaded_file($_FILES['fichier']['tmp_name'], $destination);
+        exit;
     }
     
     $user->setIdUtilisateur($idUser);

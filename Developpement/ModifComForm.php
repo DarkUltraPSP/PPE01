@@ -9,9 +9,9 @@ if (!empty($_POST['idCom']) && $_POST['idSujet'] && !empty($_POST['content']))
 ?>
 
 <form method="POST" action="ModifCommentaire.php">
-    <textarea name="modif"><?php echo $content ?></textarea>
-    <input type="hidden" value="<?php echo $idCom?>" name="idCom" />
-    <input type="hidden" value="<?php echo $idSujet?>" name="idSujet" />
+    <textarea name="modif"><?php echo $content; ?></textarea>
+    <input type="hidden" value="<?php echo $idCom; ?>" name="idCom" />
+    <input type="hidden" value="<?php echo $idSujet; ?>" name="idSujet" />
     <input type="submit" value="Modifier"/>
 </form>
 
