@@ -97,3 +97,9 @@ h3
 {
     margin: 5px;
 }
+
+.link
+{
+    border: none;
+    background-color: transparent;
+}

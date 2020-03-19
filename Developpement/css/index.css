@@ -1,14 +1,49 @@
-body
+.new
 {
-    margin: 0px;
-    background-color: #ebebeb;
-    min-height: 300px;
+    display: flex;
+    justify-content: end;
 }
 
-.Commentaire
+
+.titreAccueil
 {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border-bottom:1px solid black;
+    margin:20px;
+    font-size: 40px;
+}
+
+.sujet
+{
+    border-bottom:1px solid black;
+    margin-bottom:10px;
+}
+
+.Type
+{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn
+{
+    width: 200px;
+    height: 60px;
+    background: none;
+    border: 4px solid;
+    color: #2e86de;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 20px;
+    transition: transform .2s;
+}
+
+.btn:hover
+{
+    transform: scale(1.25);
 }
 
 .border
@@ -17,6 +52,8 @@ body
     padding: 10px;
     margin: 10px;
     transition: transform .2s;
+    display: flex;
+    flex-direction: row;
 }
 
 .border:hover
@@ -29,31 +66,25 @@ body
     font-size: 20px;
 }
 
-.link
+.Sujets
 {
-    border: none;
-    background-color: transparent;
+    margin: 100px 0px 50px 0px;
 }
 
-.new
+.divType
 {
     display: flex;
-    justify-content: end;
+    width: 10%;
+    margin: 0px 10px 0px 0px;
 }
 
-.block
+.TypePhoto
 {
-    margin-bottom:20px;
+    width: 100%;
+    margin: 5px;
 }
 
-.titreAccueil
+.InfoSujet
 {
-    border-bottom:1px solid black;
-    margin:20px;
-    font-size: 40px;
-}
-.sujet
-{
-    border-bottom:1px solid black;
-    margin-bottom:10px;
+    width: 90%;
 }

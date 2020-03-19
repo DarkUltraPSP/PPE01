@@ -14,6 +14,7 @@ class TypeManager
         {
             $type->setIdType($lineResultat['idType']);
             $type->setLibelle($lineResultat['libelle']);
+            $type->setPathPhotoType($lineResultat['pathPhotoType']);
         }
         return $type;
     }

@@ -1,0 +1,55 @@
+.titreAccueil
+{
+    border-bottom:1px solid black;
+    margin:20px;
+    font-size: 40px;
+}
+
+.new
+{
+    display: flex;
+    justify-content: end;
+}
+
+.sujet
+{
+    border-bottom:1px solid black;
+    margin-bottom:10px;
+}
+
+.border
+{
+    display: flex;
+    box-shadow: 0 0 10px #00000070;
+    padding: 10px;
+    margin: 10px;
+    transition: transform .2s;
+}
+
+.border:hover
+{
+    transform: scale(1.10);
+}
+
+.NomSujet
+{
+    font-size: 20px;
+}
+
+.divType
+{
+    display: flex;
+    width: 10%;
+    margin: 0px 10px 0px 0px;
+}
+
+.TypePhoto
+{
+    width: 100%;
+    margin: 5px;
+}
+
+.InfoSujet
+{
+    width: 90%;
+}

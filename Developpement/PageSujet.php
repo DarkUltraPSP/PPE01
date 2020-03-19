@@ -56,8 +56,8 @@
                     ?>
                 <?php
             }
-            echo "</div>";
-            echo "</div>";
+            echo "</div>"; //Ferme div adminCMD
+            echo "</div>"; //Ferme div Sujet
             echo "<div>";
             echo "<div><h2> Commentaires : </h2></div>";
             
@@ -91,7 +91,7 @@
                     
                     echo "<div class='contenuCom'>";
                     echo    "<div><h>".$com->getContenuCommmentaire()."</h></div>";
-                    echo "</div>";
+                    echo "</div>"; //Ferme div contenuCom
                     echo "<div class='lateralCom'>";
                     echo "<div><h> Publié le ".$com->getDateCommentaire()."</h></div>";
                     if(isset($_SESSION['idUser']) && $_SESSION['isAdmin'] == 1 || isset($_SESSION['idUser']) && $_SESSION['idUser'] == $com->getIdUtilisateur())
@@ -127,7 +127,7 @@
                             }
                         }
                     }
-                    echo "</div>";
+                    echo "</div>"; //Ferme div lateralCom
                     ?>
 </div>
 <?php
@@ -149,6 +149,12 @@
                         </form>
                     </div>
                 <?php
+                }
+                else
+                {
+                    ?>
+<p> <a href="Connexion.php" > Connectez-vous</a> ou <a href="inscription.php">inscrivez vous</a> pour commenter un sujet.</p>
+                    <?php
                 }
             }
             if (!empty($_POST["Reponse"]))

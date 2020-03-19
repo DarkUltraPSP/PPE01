@@ -32,7 +32,26 @@ class SujetManager
         $tabSujet = [];
         $subject = new Sujet();
         
-        $state = $login->prepare("SELECT * FROM Sujet ORDER BY dateSujet");
+        $state = $login->prepare("SELECT * FROM Sujet ORDER BY dateSujet DESC");
+        $state->execute();
+        $resultatsSujet=$state->fetchAll();
+        
+        foreach ($resultatsSujet as $lineResultat)
+        {
+            $subject = SujetManager::findSujet ($lineResultat["idSujet"]);
+            $tabSujet[]=$subject;
+        }
+        return $tabSujet;
+    }
+    
+    public static function findLastestSubjects()
+    {
+        $login = dataBaseLinker::getConnexion();
+        
+        $tabSujet = [];
+        $subject = new Sujet();
+        
+        $state = $login->prepare("SELECT * FROM Sujet ORDER BY dateSujet DESC LIMIT 3");
         $state->execute();
         $resultatsSujet=$state->fetchAll();
         

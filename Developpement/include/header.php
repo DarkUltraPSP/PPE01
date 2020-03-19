@@ -35,19 +35,22 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
         <meta charset="utf-8" />
         <title>Forum PPE01</title>
         <link rel="stylesheet" type="text/css" href="css/header.css" media="all"/>
-        <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
         <link rel="stylesheet" type="text/css" href="css/Organisation.css" media="all"/>
 
         <link rel="icon" type="image/png" href="image/logo.ico" />
     </head>
     <body>
+        
         <header>
+            
             <div class="divLogo">
                 <img src="image/logo.png" class="logo">
             </div>
+            
             <div class="nomForum">
                 <a href="index.php"><p class="color"> Nom du Forum </p></a>
             </div>
+            
             <?php
             if (empty($_SESSION['login']))
             {
@@ -61,6 +64,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
             else
             {
             ?>
+            
                 <form method="GET" action="OptionsProfil.php" class="Profil">
                     <?php
                     foreach ($users as $user)
@@ -76,13 +80,15 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                         }
                     }
                     ?>
-                    <a href="index.php?deco=true"><input type="button" value="Deconnexion" class="bouton"/></a>
+                            <a href="index.php?deco=true"><input type="button" value="Deconnexion" class="bouton"/></a>
                             </div>
                 </form>
+            
             <?php
             }
             ?>
         </header>
+        
         <div class="Recherche">
             <form method="POST" action="Search.php" class="RechercheCenter">
                 <input type="text" name="Recherche" placeholder="Rechercher" required/>
@@ -96,6 +102,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
             </form>
             <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
         </div>
+        
         <div class="Orga">
             <div class="lateral">
             </div>
