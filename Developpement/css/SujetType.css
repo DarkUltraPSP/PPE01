@@ -20,6 +20,7 @@
 
 .border
 {
+    display: flex;
     box-shadow: 0 0 10px #00000070;
     padding: 10px;
     margin: 10px;
@@ -34,4 +35,22 @@
 .NomSujet
 {
     font-size: 20px;
+}
+
+.divType
+{
+    display: flex;
+    width: 10%;
+    margin: 0px 10px 0px 0px;
+}
+
+.TypePhoto
+{
+    width: 100%;
+    margin: 5px;
+}
+
+.InfoSujet
+{
+    width: 90%;
 }

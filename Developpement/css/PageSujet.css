@@ -98,8 +98,8 @@ h3
     margin: 5px;
 }
 
-.link
+.Prof
 {
-    border: none;
-    background-color: transparent;
+    display: flex;
+    flex-direction: column;
 }
