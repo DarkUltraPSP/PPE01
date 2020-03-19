@@ -34,7 +34,10 @@ if(!empty($_POST['idUser']))
     
     if (!empty($_FILES['fichier']['tmp_name']))
     {
-        $destination = "UserImage/";
+        $pseudo = $_POST['pseudoPDP'];
+        
+        $destination = "UserImage/$pseudo".pathinfo($_FILES['fichier'], PATHINFO_EXTENSION);
+        pathinfo($destination, PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['fichier']['tmp_name'], $destination);
         exit;
     }
@@ -45,4 +48,3 @@ if(!empty($_POST['idUser']))
     
     header("Location: OptionsProfil.php?idUser=$idUser");
 }
-

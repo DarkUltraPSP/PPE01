@@ -38,6 +38,7 @@ if (!empty($_GET['idUser']))
                 <?php
                 echo "<img class='img' src='".$user->getCheminPhoto()."'/>";
                 ?>
+                <input type="hidden" value="<?php echo $user->getPseudo() ?>" name="pseudoPDP"/>
                 <input type="hidden" value="<?php echo $user->getCheminPhoto() ?>" name="pathPhoto"/>
                 <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
                 <?php 

@@ -54,7 +54,7 @@ class UsersManager
         $dateNaissance = $user->getDateNaissance();
         $mail = $user->getMail();
         $sexe = $user->getSexe();
-        $ban = 1;
+        $ban = 0;
         $pdp = $user->getCheminPhoto();
         
         $state = $login->prepare("INSERT INTO Utilisateur (pseudo, password, dateNaissance, mail, sexe, dateInscription, ban, cheminPhoto) VALUES (?, ?, ?, ?, ?, CURDATE(), ?, ?)");

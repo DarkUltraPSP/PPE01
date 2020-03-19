@@ -41,7 +41,9 @@ else if ($testPseudo == false)
 {
     echo "<p>Ce nom d'utilisateur est deja pris. </p>";
     echo "<p> Vous allez être redirigé vers la page d'inscription dans 3 secondes. </p>";
-    ?><META HTTP-EQUIV="Refresh" CONTENT="5; URL=Connexion.php"><?php
+    ?>
+<META HTTP-EQUIV="Refresh" CONTENT="5; URL=Connexion.php">
+    <?php
     header("Location: Inscription.php");
     exit;
 
