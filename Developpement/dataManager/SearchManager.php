@@ -4,9 +4,8 @@ class SearchManager
 {
     public static function searchSubject($subjectName)
     {
-        $subject = new Sujet();
         $login = DatabaseLinker::getConnexion();
-        $state = $login->prepare("SELECT * FROM Sujet WHERE nomSujet LIKE ('?')");
+        $state = $login->prepare('SELECT * FROM Sujet WHERE nomSujet LIKE "%?%" ORDER BY idSujet DESC');
         $state->bindParam(1, $subjectName);
         $state->execute();
         $resultat = $state->fetchAll();
@@ -14,11 +13,10 @@ class SearchManager
     
     public static function searchAutor()
     {
-        
-    }
-    
-    public static function searchContent()
-    {
-        
+        $login = DatabaseLinker::getConnexion();
+        $state = $login->prepare('SELECT * FROM Utilisateur WHERE pseudo LIKE "%?%" ORDER BY idUtilisateur DESC');
+        $state->bindParam(1, $subjectName);
+        $state->execute();
+        $resultat = $state->fetchAll();
     }
 }

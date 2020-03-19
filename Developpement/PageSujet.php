@@ -77,12 +77,12 @@
                         {
                             ?>
                             <div class='lateralCom'>
-                                <form method="GET" action="OptionsProfil.php">
+                                <form class="Prof" method="GET" action="OptionsProfil.php">
                                     <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
                                     <input class="pseudo link" type="submit" value="<?php echo $user->getPseudo()?>"/>
+                                    <input class="pdp" type="image" src="<?php echo $user->getCheminPhoto();?>"/>
                                 </form>
                             <?php
-                            echo    "<div><img class='pdp' src='".$user->getCheminPhoto()."'></div>";
                             ?>
                                 </div>
                             <?php

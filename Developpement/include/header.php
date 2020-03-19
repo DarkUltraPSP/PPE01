@@ -72,7 +72,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                         if ($_SESSION['idUser'] == $user->getIdUtilisateur())
                         {
                             ?>
-                            <img class="pdpProfil" src="<?php echo $user->getCheminPhoto();?>" >
+                    <input class="pdpProfil" type="image" src="<?php echo $user->getCheminPhoto();?>"/>
                             <div class="Settings">
                                 <input type="hidden" value="<?php echo $user->getIdUtilisateur(); ?>" name="idUser"/>
                                 <input type="submit" value="<?php echo $user->getPseudo();?>" class="optProfil link"/>
@@ -91,7 +91,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
         
         <div class="Recherche">
             <form method="POST" action="Search.php" class="RechercheCenter">
-                <input type="text" name="Recherche" placeholder="Rechercher" required/>
+                <input type="search" name="Recherche" placeholder="Rechercher" required/>
                 <SELECT name="TypeRecherche" size="1">
                     <option> Trier par : </option>
                     <option value="Sujet"> Sujet </option>
