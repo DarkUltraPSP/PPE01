@@ -27,7 +27,15 @@ contenuSujet LONGTEXT,
 canRespond TINYINT,
 dateSujet DATE,
 idUtilisateur INT,
+idType INT,
 PRIMARY KEY(idSujet)
+);
+
+CREATE TABLE IF NOT EXISTS TypeSujet
+(
+    idType INT AUTO_INCREMENT,
+    libelle VARCHAR (64),
+    PRIMARY KEY (idType)
 );
 
 CREATE TABLE IF NOT EXISTS Commentaire
@@ -55,6 +63,11 @@ ADD CONSTRAINT Sujet_idUtilisateur
 FOREIGN KEY (idUtilisateur)
 REFERENCES Utilisateur (idUtilisateur);
 
+ALTER TABLE Sujet
+ADD CONSTRAINT Sujet_idType
+FOREIGN KEY (idType)
+REFERENCES TypeSujet (idType);
+
 INSERT INTO Utilisateur (pseudo, password, dateNaissance, cheminPhoto, sexe, mail, ban, isAdmin, dateInscription) VALUES
 ("Admin" , "admin",  "2000-12-13", "UserImage/administrateur.png", "Homme", "admin@gmail.com", false, true, "2020-02-01"),
 ("Ixoti", "password", "1999-02-17", "UserImage/PDP Berserk.png", "Homme", "Ixoti@gmail.com", false, false, "2020-02-01"),
@@ -66,7 +79,15 @@ INSERT INTO Sujet (nomSujet, contenuSujet, canRespond, dateSujet, idUtilisateur)
 ("Babyfoot IRL", "Yo les kheys j'ai recemment aquis un babyfoot et j'y joue tous les jours. Au point d'y jouer tout seul. Cela deviens une addiction. Pas plus tard qu'hier soir, dans mon lit j'ai eu une idée de génie : Et si je jouais au babyfoot IRl ? Du coup je demande aux jeunes mamans ou jeunes papas si ils pourraient me preter leurs enfant le temps d'une aprem qu'on essaie ce nouveau sport avec des potes. (Oui j'ai mis au pluriel les enfants parceque meme au babyfoot calssique il est pas rare de perdre une balle)", 1, "2020-01-30", 2),
 ("Entrainement Ninja", "Bonjour les gars, j'aimerais ameliorer mes techniques de ninja mais j'ai pas les moyens de m'acheter un mannequin et puis taper un objet c'est pas realiste. Des gens chauds pour venir gare du nord s'entrainer avec moi ?", 1, "2020-01-07", 3);
 
-INSERT INTO Commentaire (contenuCommentaire , dateCommentaire, idSujet,idUtilisateur)
-VALUES ("Pas mal x) je connais la ref &#128147 Best film ever","2019-11-12",1,2),
+INSERT INTO Commentaire (contenuCommentaire , dateCommentaire, idSujet,idUtilisateur) VALUES 
+("Pas mal x) je connais la ref &#128147 Best film ever","2019-11-12",1,2),
 ("Que des Gamins... le film est nul et les acteurs jouent mal","2019-12-12",1,1),
 ("Moi je pense avec mon BTS philo que toute solution est juste une suite d'action qui créer des conséquences ","2019-11-10",1,1);
+
+INSERT INTO TypeSujet (libelle) VALUES
+("Blabla"),
+("Informatique"),
+("Sport"),
+("Jeux video"),
+("Actualité"),
+("Savoir & Culture");

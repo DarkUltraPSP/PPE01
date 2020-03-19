@@ -8,6 +8,7 @@ class Sujet
     private $canRespond;
     private $dateSujet;
     private $idUtilisateur;
+    private $idType;
 
     function getIdSujet() {
         return $this->idSujet;
@@ -33,6 +34,10 @@ class Sujet
         return $this->idUtilisateur;
     }
 
+    function getIdType() {
+        return $this->idType;
+    }
+
     function setIdSujet($idSujet) {
         $this->idSujet = $idSujet;
     }
@@ -55,6 +60,10 @@ class Sujet
 
     function setIdUtilisateur($idUtilisateur) {
         $this->idUtilisateur = $idUtilisateur;
+    }
+
+    function setIdType($idType) {
+        $this->idType = $idType;
     }
 
 

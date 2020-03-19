@@ -15,6 +15,8 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     include_once ("dataManager/UsersManager.php");
     include_once ("dataManager/SujetManager.php");
     include_once ("dataManager/SearchManager.php");
+    include_once 'dataManager/TypeManager.php';
+    include_once 'data/TypeSujet.php';
     include_once ("data/Commentaire.php");
     include_once ("data/Sujet.php");
     include_once ("data/User.php");
@@ -24,6 +26,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     $sujets = SujetManager::findAllSujet();
     $commentaires = Commentairemanager::findAllCommentaires();
     $users = UsersManager::findAllUsers();
+    $types = TypeManager::findAllTypes();
     
 ?>
 <!DOCTYPE html>

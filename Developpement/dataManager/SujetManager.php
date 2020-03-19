@@ -20,6 +20,7 @@ class SujetManager
             $subject->setCanRespond($lineResultat["canRespond"]);
             $subject->setDateSujet($lineResultat["dateSujet"]);
             $subject->setIdUtilisateur($lineResultat["idUtilisateur"]);
+            $subject->setIdType($lineResultat['idType']);
         }
         return $subject;
     }
@@ -50,13 +51,15 @@ class SujetManager
         $nom = $sujet->getNomSujet();
         $content = $sujet->getContenuSujet();
         $idUtilisateur = $sujet->getIdUtilisateur();
+        $idType = $sujet->getIdType();
         $canRespond = 1;
         
-        $state = $login->prepare("INSERT INTO Sujet (nomSujet, contenuSujet, canRespond, dateSujet, idUtilisateur) VALUES (?, ?, ?, CURDATE(), ?)");
+        $state = $login->prepare("INSERT INTO Sujet (nomSujet, contenuSujet, canRespond, dateSujet, idUtilisateur, idType) VALUES (?, ?, ?, CURDATE(), ?, ?)");
         $state->bindParam(1, $nom);
         $state->bindParam(2, $content);
         $state->bindParam(3, $canRespond);
         $state->bindParam(4, $idUtilisateur);
+        $state->bindParam(5, $idType);
         $state->execute();
     }
     
