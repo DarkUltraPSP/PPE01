@@ -40,10 +40,13 @@ if (!empty($_POST['bio']))
 {
     ?>
 <div class="bio">
-        <form method="POST" action="ModifUserSender.php">
+        <form class="modif" method="POST" action="ModifUserSender.php">
+            <p class="titre">Modification de votre biographie</p>
+            <p>Décrivez-vous en quelques lignes (Ex: prenom,études,loisirs).</p>
             <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
             <textarea class="txtArea" name="bio"><?php echo $_POST['bio']; ?></textarea>
-            <input type="submit" value="Confirmer"/>
+            </br>
+            <input class="btn2" type="submit" value="Confirmer"/>
         </form>
     </div>
 <?php
