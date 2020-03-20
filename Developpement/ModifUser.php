@@ -4,15 +4,17 @@ include_once 'include/header.php';
 
 $idUser = $_POST['idUser'];
 ?>
-<link rel="stylesheet" type="text/css" href="css/ModifUser" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/ModifUser.css" media="all"/>
 <?php
 
 if (!empty($_POST['pseudo']))
 {?>
-    <form method="POST" action="ModifUserSender.php">
+    <form class="modif" method="POST" action="ModifUserSender.php">
+        <p class="titre">Modification de votre pseudo</p>
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
         <input type="text" value="<?php echo $_POST['pseudo']; ?>" name="NewPseudo" placeholder="Entrez un nouveau pseudo"/>
-        <input type="submit" value="Confirmer"/>
+        </br>
+        <input class="btn2" type="submit" value="Confirmer"/>
     </form>
 <?php
 }
@@ -20,13 +22,14 @@ if (!empty($_POST['pseudo']))
 if (!empty($_POST['pathPhoto']))
 {
     ?>
-<div class="modifPhoto">
+<div class="modif">
     <p class="titre"> Modification de votre photo de profil</p>
-    <form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
+    <form class="contenu" method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
         <input type="hidden" value="<?php echo $_POST['pseudoPDP']; ?>" name="pseudoPDP"/>
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
         <input type="file" id="idFichier" name="fichier"/>
-        <input type="submit" value="Valider"/>
+        </br>
+        <input class="btnPhoto" type="submit" value="Valider"/>
     </form>
 </div>
     <?php
@@ -46,10 +49,11 @@ if (!empty($_POST['bio']))
 if (!empty($_POST['dateNaissance']))
 {
     ?>
-<form method="POST" action="ModifUserSender.php">
+<form class="modif" method="POST" action="ModifUserSender.php">
+    <p class="titre">Modification de votre date de naissance</p>    
     <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
     <input type="date" max="2016-01-01" min="1920-01-01" name="dateNaissance"/>
-    <input type="submit" value="Confirmer"/>
+    <input class="btn2" type="submit" value="Confirmer"/>
 </form>
     <?php
 }
@@ -57,10 +61,13 @@ if (!empty($_POST['dateNaissance']))
 if (!empty($_POST['mail']))
 {
     ?>
-<form method="POST" action="ModifUserSender.php">
+<form class="modif" method="POST" action="ModifUserSender.php">
+    <p class="titre"> Modification de votre adresse mail</p>
     <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
     <input type="text" value="<?php echo $_POST['mail']; ?>" name="mail" placeholder="Entrez une nouvelle adresse mail"/>
-    <input type="submit" value="Confirmer"/>
+    </br>
+    </br>
+    <input class="btn2" type="submit" value="Confirmer"/>
 </form>
     <?php
 }
@@ -68,15 +75,20 @@ if (!empty($_POST['mail']))
 if (!empty($_POST['password']))
 {
     ?>
-<form method="POST" action="ModifUserSender.php">
+<form class="modifMdp" method="POST" action="ModifUserSender.php">
+    <p class="titre">Modification de votre mot de passe</p>
     <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
     <label> Entrez votre mot de passe actuel </label>
     <input type="password" name="password1" placeholder="Mot de passe actuel"/>
+    </br>
     <label> Entrez votre nouveau mot de passe</label>
     <input type="password" name="password1" placeholder="Nouveau mot de passe"/>
+    </br>
     <label> Confirmez votre nouveau mot de passe </label>
     <input type="password" name="password2" placeholder=" Nouveau Mot de passe"/>
-    <input type="submit" value="Confirmer"/>
+    </br>    
+    </br>
+    <input class="btn2" type="submit" value="Confirmer"/>
 </form>
     <?php
 }
