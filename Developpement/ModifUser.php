@@ -4,7 +4,7 @@ include_once 'include/header.php';
 
 $idUser = $_POST['idUser'];
 ?>
-<link rel="stylesheet" type="text/css" href="css/ModifUser.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/ModifUser" media="all"/>
 <?php
 
 if (!empty($_POST['pseudo']))
@@ -20,13 +20,15 @@ if (!empty($_POST['pseudo']))
 if (!empty($_POST['pathPhoto']))
 {
     ?>
-<p class="titre"> Modification de votre photo de profil</p>
-<form class="bloc" method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
-    <input type="hidden" value="<?php echo $_POST['pseudoPDP']; ?>" name="pseudoPDP"/>
-    <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
-    <input type="file" id="idFichier" name="fichier"/>
-    <input type="submit" value="Valider"/>
-</form>
+<div class="modifPhoto">
+    <p class="titre"> Modification de votre photo de profil</p>
+    <form method="POST" action="ModifUserSender.php" enctype="multipart/form-data">
+        <input type="hidden" value="<?php echo $_POST['pseudoPDP']; ?>" name="pseudoPDP"/>
+        <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
+        <input type="file" id="idFichier" name="fichier"/>
+        <input type="submit" value="Valider"/>
+    </form>
+</div>
     <?php
 }
 
