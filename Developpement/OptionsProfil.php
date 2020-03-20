@@ -2,7 +2,7 @@
 
 include_once 'include/header.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/OptionsProfil.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/OptionsProfil" media="all"/>
 <?php
 
 if (!empty($_GET['idUser']))
@@ -20,18 +20,19 @@ if (!empty($_GET['idUser']))
             echo $user->getPseudo();
         ?>
         <form class="form column" method="POST" action="ModifUser.php">
-    </div>   
+       
         <input class="titre" type="hidden" value="<?php echo $user->getPseudo() ?>" name="pseudo"/>
         <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
         <?php 
         if ($_SESSION['idUser'] == $user->getIdUtilisateur())
             {
             ?>
-        <input class="btn" type="submit" value="Modifier pseudo"/>
+            <input class="btnModif" type="image" src="image/modif.png">
             <?php
             }
             ?>
         </form>
+    </div>
     <div class="org">
         <div class="pdp">
             <form class="form column" method="POST" action="ModifUser.php">
@@ -45,7 +46,7 @@ if (!empty($_GET['idUser']))
                 if ($_SESSION['idUser'] == $user->getIdUtilisateur())
                 {
                 ?>
-                <input class="btn" type="submit" value="Modifier photo de profil"/>
+                <input class="modifPhoto" type="submit" value="Modifier"/>
                 <?php
                 }
                 ?>
@@ -99,7 +100,7 @@ if (!empty($_GET['idUser']))
                     if ($_SESSION['idUser'] == $user->getIdUtilisateur())
                     {
                     ?>
-                    <input class="btn" type="submit" value="Modifier"/>
+                    <input class="modif" type="image" src="image/modif.png">
                     <?php
                     }
                     ?>
@@ -107,7 +108,7 @@ if (!empty($_GET['idUser']))
                 </div>
                 <div class="stat">
                     <?php
-                    echo "<p> Nombre de sujet postés : ".UsersManager::countSujets($_GET['idUser'])."</p>";
+                    echo "<p> Nombre de sujets postés : ".UsersManager::countSujets($_GET['idUser'])."</p>";
                     echo "<p> Nombre de commentaires postés : ".UsersManager::countCommentaires($_GET['idUser'])."</p>";
                     ?>
                 </div>
