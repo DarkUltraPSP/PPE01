@@ -130,7 +130,7 @@ if (!empty($_GET['idUser']))
                 }
                 ?>
             </form>
-            <form class="formColumn" method="POST" action="ModifUser.php">
+            <form class="formColumn2" method="POST" action="ModifUser.php">
                 <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
                 <input type="hidden" value="<?php echo $user->getMotDePasse() ?>" name="password"/>
                 <?php 
