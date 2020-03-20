@@ -1,5 +1,7 @@
 <?php
+
 $page = "index";
+
 include_once "include/header.php";
 ?>
 <link rel="stylesheet" type="text/css" href="css/index.css" media="all"/>
