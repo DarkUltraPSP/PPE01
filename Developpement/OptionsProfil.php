@@ -2,7 +2,7 @@
 
 include_once 'include/header.php';
 ?>
-<link rel="stylesheet" type="text/css" href="css/OptionsProfil" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/OptionsProfil.css" media="all"/>
 <?php
 
 if (!empty($_GET['idUser']))

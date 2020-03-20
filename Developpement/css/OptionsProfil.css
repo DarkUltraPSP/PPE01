@@ -1,5 +1,6 @@
 .all
 {
+    margin-top:50px;
     box-shadow: 0 0 10px #00000070;
     align-items: center;
     display: flex;
@@ -97,7 +98,7 @@
 {
     margin-top:20px;
     width:100%;
-    margin-right:10px; 
+    margin-right:10px;
 }
 
 .formColumn2
