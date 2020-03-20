@@ -106,10 +106,10 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                 <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
             </div>
             <?php
-            if (!empty($page))
+            if (!isset($page))
             {
                 ?>
-        <div class="type">
+            <div class="type">
                 <?php
                 foreach ($types as $type)
                 {
@@ -118,11 +118,11 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                     <input type="hidden" value="<?php echo $type->getIdType(); ?>" name="idType">
                     <input class="btn" type="submit" value="<?php echo $type->getLibelle(); ?>" name="libelle">
                 </form>
-            
+
                 <?php
                 }
                 ?>
-        </div>
+            </div>
             <?php 
             }?>
         </div>

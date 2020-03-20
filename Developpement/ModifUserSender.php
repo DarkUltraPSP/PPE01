@@ -62,8 +62,8 @@ if(!empty($_POST['idUser']))
     {
         $pseudo = $_POST['pseudoPDP'];
         
-        $destination = "UserImage/$pseudo".pathinfo($_FILES['fichier'], PATHINFO_EXTENSION);
-        pathinfo($destination, PATHINFO_EXTENSION);
+        //$destination = "UserImage/$pseudo".pathinfo($_FILES['fichier'], PATHINFO_EXTENSION);
+        echo pathinfo($_FILES['fichier'], PATHINFO_EXTENSION);
         move_uploaded_file($_FILES['fichier']['tmp_name'], $destination);
         exit;
     }
