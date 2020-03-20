@@ -115,7 +115,7 @@ if (!empty($_GET['idUser']))
             </div>
         </div>
         <div class="cote">
-            <form class="form column" method="POST" action="ModifUser.php">
+            <form class="formColumn" method="POST" action="ModifUser.php">
                 <label> Adresse e-mail : </label>
                 <?php
                 echo $user->getMail();
@@ -125,19 +125,20 @@ if (!empty($_GET['idUser']))
                 <?php if ($_SESSION['idUser'] == $user->getIdUtilisateur())
                 {
                 ?>
-                <input class="btn" type="submit" value="Modifer votre adresse mail"/>
+                <input class="modif" type="image" src="image/modif.png">
                 <?php
                 }
                 ?>
             </form>
-            <form class="form column" method="POST" action="ModifUser.php">
+            <form class="formColumn" method="POST" action="ModifUser.php">
                 <input type="hidden" value="<?php echo $user->getIdUtilisateur() ?>" name="idUser"/>
                 <input type="hidden" value="<?php echo $user->getMotDePasse() ?>" name="password"/>
                 <?php 
                 if ($_SESSION['idUser'] == $user->getIdUtilisateur())
                 {
                 ?>
-                <input class="btn"type="submit" value="Modifier mot de passe"/>
+                <p>Mot de passe :</p>
+                <input class="modif" type="image" src="image/modif.png">
                 <?php
                 }
                 ?>

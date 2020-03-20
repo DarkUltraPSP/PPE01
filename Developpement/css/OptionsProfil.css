@@ -22,6 +22,7 @@
     font-weight: bold;
     margin-top:30px;
     width:80%;
+    display:inline-flex;
     text-align:center;
 }
 
@@ -58,7 +59,7 @@
 
 .cote
 {
-    width: 25%;
+    width: 35%;
     text-align:center;
 }
 .textBio
@@ -90,4 +91,9 @@
 .modifPhoto
 {
     width:70px;
+}
+.formColumn
+{
+    width:100%;
+    margin-right:10px; 
 }
