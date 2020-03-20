@@ -106,7 +106,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
                 <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
             </div>
             <?php
-            if (!isset($page))
+            if (!empty($page))
             {
                 ?>
         <div class="type">
