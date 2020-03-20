@@ -3,33 +3,18 @@
 include_once 'include/header.php';
 
 $idUser = $_POST['idUser'];
+?>
+<link rel="stylesheet" type="text/css" href="css/ModifUser.css" media="all"/>
+<?php
 
 if (!empty($_POST['pseudo']))
-{
-    foreach ($users as $user)
-    {
-        if ($_POST['pseudo'] != $user->getPseudo())
-        {
-    ?>
-    <link rel="stylesheet" type="text/css" href="css/ModifUser.css" media="all"/>
-    
+{?>
     <form method="POST" action="ModifUserSender.php">
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
-        <input type="text" value="<?php echo $_POST['pseudo']; ?>" name="pseudo" placeholder="Entrez un nouveau pseudo"/>
+        <input type="text" value="<?php echo $_POST['pseudo']; ?>" name="NewPseudo" placeholder="Entrez un nouveau pseudo"/>
         <input type="submit" value="Confirmer"/>
     </form>
-
-    <?php
-        }
-        else if ($_POST['pseudo'] == $user->getPseudo())
-        {
-            echo "Ce pseudo est deja pris.";
-            echo "Vous allez être redirigé vers votre profil.";
-            ?>
-<META HTTP-EQUIV="Refresh" CONTENT="5; URL=OptionsProfil.php?idUser=<?php echo $idUser ?>"> 
-            <?php
-        }
-    }
+<?php
 }
 
 if (!empty($_POST['pathPhoto']))

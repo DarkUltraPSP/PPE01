@@ -85,6 +85,7 @@ class UsersManager
             $state = $login->prepare("UPDATE Utilisateur SET pseudo = ? WHERE idUtilisateur = ?");
             $state->bindParam(1, $pseudo);
         }
+        
         if (!empty($bio))
         {
             $state = $login->prepare("UPDATE Utilisateur SET biographie = ? WHERE idUtilisateur = ?");
@@ -108,6 +109,7 @@ class UsersManager
             $state = $login->prepare("UPDATE Utilisateur SET password = ? WHERE idUtilisateur = ?");
             $state->bindParam(1, $password);
         }
+        
         $state->bindParam(2, $idUser);
         $state->execute();
         

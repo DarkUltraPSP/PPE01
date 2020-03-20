@@ -1,15 +1,41 @@
 <?php
 include_once 'include/header.php';
 
+function testPseudo($newPseudo)
+{
+    $users = UsersManager::findAllUsers();
+    $testPseudo = false ;
+    
+    foreach ($users as $user)
+    {
+        if ($newPseudo == $user->getPseudo())
+        {
+            $testPseudo = true;
+        }
+    }
+    return $testPseudo;
+}
+
 $user = new User();
 $idUser = $_POST['idUser'];
 
 if(!empty($_POST['idUser']))
 {
-    
-    if (!empty($_POST['pseudo']))
+    if (!empty($_POST['NewPseudo']))
     {
-        $user->setPseudo($_POST['pseudo']);
+        if (testPseudo($_POST['NewPseudo']) == false)
+        {
+            $user->setPseudo($_POST['NewPseudo']);
+        }
+        else
+        {
+            echo "Ce pseudo est deja pris.";
+            echo "Vous allez être redirigé vers votre profil.";
+            ?>
+            <META HTTP-EQUIV="Refresh" CONTENT="5; URL=OptionsProfil.php?idUser=<?php echo $idUser ?>"> 
+            <?php
+            exit;
+        }
     }
 
     if (!empty($_POST['bio']))
