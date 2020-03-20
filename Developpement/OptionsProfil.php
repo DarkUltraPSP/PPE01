@@ -27,7 +27,7 @@ if (!empty($_GET['idUser']))
         if ($_SESSION['idUser'] == $user->getIdUtilisateur())
             {
             ?>
-            <input class="btnModif" type="image" src="image/modif.png">
+            <input class="modif" type="image" src="image/modif.png">
             <?php
             }
             ?>
