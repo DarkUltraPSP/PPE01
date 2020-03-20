@@ -6,6 +6,17 @@ include_once 'include/header.php';
 
 <p class="titreAccueil"><?php echo $_GET['libelle']; ?></p>
 <?php
+if(isset($_SESSION['idUser']))
+{
+?>
+<form class="new" method="POST" action="NewSujet.php">
+    <input type="hidden" value="<?php echo $_GET['idType']?>" name="idType"/>
+    <div class="new">
+        <input type="submit" value="Créer un nouveau sujet dans cette catégorie"/>
+    </div>
+</form>
+<?php
+}
 foreach ($sujets as $sujet)
 {
     if ($sujet->getIdType() == $_GET['idType'])
