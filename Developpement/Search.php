@@ -12,7 +12,7 @@
         switch ($typeRecherche)
         {
             case 'Sujet':
-                SearchManager::searchSubject($keyword);
+                var_dump(SearchManager::searchSubject($keyword));
                 break;
             
             case 'Auteur':

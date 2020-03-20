@@ -137,7 +137,7 @@
             echo "</div>";
             if ($sujet->getCanRespond() == 1)
             {
-                if (isset($_SESSION['idUser']))
+                if (isset($_SESSION['idUser']) && testBan($_SESSION['idUser']) == 0)
                 {
                 ?>
                     <div class="newCom">
@@ -152,9 +152,16 @@
                 }
                 else
                 {
+                    if (testBan($_SESSION['idUser'] == 1))
+                    {
+                        echo "Vous avez été banni";
+                    }
+                    else
+                    {
                     ?>
 <p> <a href="Connexion.php" > Connectez-vous</a> ou <a href="inscription.php">inscrivez vous</a> pour commenter un sujet.</p>
                     <?php
+                    }
                 }
             }
             if (!empty($_POST["Reponse"]))

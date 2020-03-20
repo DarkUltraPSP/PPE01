@@ -5,6 +5,8 @@ include_once 'include/header.php';
 <link rel="stylesheet" type="text/css" href="css/SujetType.css" media="all"/>
 
 <p class="titreAccueil"><?php echo $_GET['libelle']; ?></p>
+
+
 <?php
 if(isset($_SESSION['idUser']))
 {

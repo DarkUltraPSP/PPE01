@@ -28,22 +28,6 @@ function testIdentifiants($login, $password)
     return $codeRetour;
 }
 
-function testBan($idUser)
-{
-    $users = UsersManager::findAllUsers();
-    $isBan = true;
-    
-    foreach ($users as $user)
-    {
-        if($idUser == $user->getIdUtilisateur() && $user->getBan() == 0)
-        {
-            $isBan = false;
-        }
-    }
-    
-    return $isBan;
-}
-
 if (testIdentifiants($_POST["pseudo"], $_POST["password"]) == true)
 {
     foreach ($users as $user)
@@ -55,6 +39,7 @@ if (testIdentifiants($_POST["pseudo"], $_POST["password"]) == true)
             $loginUser = $user->getPseudo();
             $idUser = $user->getIdUtilisateur();
             $isAdmin = $user->getIsAdmin();
+            $ban = $user->getBan();
             }
             else if (testBan($user->getIdUtilisateur()) == true)
             {
@@ -70,9 +55,11 @@ if (testIdentifiants($_POST["pseudo"], $_POST["password"]) == true)
         }
     }
     
+    $_SESSION["isBan"] = $ban;
     $_SESSION["login"] = $loginUser;
     $_SESSION["isAdmin"] = $isAdmin;
     $_SESSION['idUser'] = $idUser;
+    
     header('Location: index.php');
     exit;
 }

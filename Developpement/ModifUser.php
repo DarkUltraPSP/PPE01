@@ -28,6 +28,7 @@ if (!empty($_POST['pathPhoto']))
         <input type="hidden" value="<?php echo $_POST['pseudoPDP']; ?>" name="pseudoPDP"/>
         <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
         <input type="file" id="idFichier" name="fichier"/>
+        <p> Ne marche pas</p>
         </br>
         <input class="btnPhoto" type="submit" value="Valider"/>
     </form>
@@ -38,11 +39,13 @@ if (!empty($_POST['pathPhoto']))
 if (!empty($_POST['bio']))
 {
     ?>
-    <form method="POST" action="ModifUserSender.php">
-        <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
-        <input type="text" value="<?php echo $_POST['bio']; ?>" name="bio"/>
-        <input type="submit" value="Confirmer"/>
-    </form>
+<div class="bio">
+        <form method="POST" action="ModifUserSender.php">
+            <input type="hidden" value="<?php echo $idUser; ?>" name="idUser"/>
+            <textarea class="txtArea" name="bio"><?php echo $_POST['bio']; ?></textarea>
+            <input type="submit" value="Confirmer"/>
+        </form>
+    </div>
 <?php
 }
 

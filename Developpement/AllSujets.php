@@ -4,7 +4,7 @@ include_once "include/header.php";
 <link rel="stylesheet" type="text/css" href="css/AllSujets.css" media="all"/>
 <p class="titreAccueil">Tous les sujets</p>
 <?php
-if(isset($_SESSION['idUser']))
+if(isset($_SESSION['idUser']) && !isset($_SESSION['isBan']))
 {
 ?>
 <form class="new" method="POST" action="NewSujet.php">

@@ -8,7 +8,7 @@
 <div class="bloc">
         <div class="info">
             <input class="details" type="text" name="pseudo" placeholder="Pseudo" required/>
-            <input class="details" type="text" name="mail" placeholder="Adresse e-mail" required/>
+            <input class="details" type="email" name="mail" placeholder="Adresse e-mail" required/>
             <input class="details" type="password" name="password" placeholder="Mot de passe" required/>
         </div>
         <div class="info2">
@@ -18,7 +18,7 @@
                 <option> Femme </option>
                 <option> Hélicoptère d'attaque </option>
             </select>
-                
+            <input type="hidden" value="Aucune Biographie" name="bio"/>
             <input type="hidden" name="pdp" value="UserImage/utilisateur.png"/>
         </div>
         </br>

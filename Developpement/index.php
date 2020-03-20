@@ -28,7 +28,7 @@ $sujetLimit = SujetManager::findLastestSubjects();
 <div class="Sujets">
     <p class="titreAccueil">Les derniers topics publiés</p>
     <?php
-    if(isset($_SESSION['idUser']))
+    if(isset($_SESSION['idUser']) && testBan($_SESSION['idUser']) == 0) //Inserer un nouveau sujet si l'utilisateur est connecté et non banni
     {
     ?>
     <form class="new" method="POST" action="NewSujet.php">
@@ -75,7 +75,7 @@ $sujetLimit = SujetManager::findLastestSubjects();
             {
             ?>
         <form class="new" method="POST" action="SupprSujet.php">
-            <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet"/>
+            <input type="hidden" value="<?php echo $sujet->getIdSujet(); ?>" name="idSujet" />
             <div class="new">
                 <input type="submit" value="Supprimer" />
             </div>

@@ -21,6 +21,7 @@ if ($testPseudo == true)
     $user->setMotDePasse($_POST['password']);
     $user->setDateNaissance($_POST['dateNaissance']);
     $user->setSexe($_POST['sexe']);
+    $user->setBiographie($_POST['bio']);
     
     if ($_POST['sexe'] == "Homme")
     {

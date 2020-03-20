@@ -1,15 +1,5 @@
 <?php
-if (!isset($_SESSION))
-{
-    session_name('user');
-    session_start();
-}
-
-if (!empty($_GET["deco"]) && $_GET["deco"] == true)
-{
-    session_unset();
-    session_destroy();
-}
+    
     include_once ("dataManager/dataBaseLinker.php");
     include_once ("dataManager/CommentaireManager.php");
     include_once ("dataManager/UsersManager.php");
@@ -21,6 +11,21 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     include_once ("data/Sujet.php");
     include_once ("data/User.php");
     
+    function testBan($idUser)
+    {
+        $users = UsersManager::findAllUsers();
+        $isBan = true;
+
+        foreach ($users as $user)
+        {
+            if($idUser == $user->getIdUtilisateur() && $user->getBan() == 0)
+            {
+                $isBan = false;
+            }
+        }
+        return $isBan;
+    }
+    
     DatabaseLinker::getConnexion();
 
     $sujets = SujetManager::findAllSujet();
@@ -28,6 +33,18 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
     $users = UsersManager::findAllUsers();
     $types = TypeManager::findAllTypes();
     
+    if (!isset($_SESSION))
+    {
+        session_name('user');
+        session_start();
+    }
+
+    if (!empty($_GET["deco"]) && $_GET["deco"] == true)
+    {
+        session_unset();
+        session_destroy();
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -92,7 +109,7 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
         <div class="Recherche">
             <div class="bar">
                 <form method="POST" action="Search.php" class="RechercheCenter">
-                    <input type="search" name="Recherche" placeholder="Rechercher" required/>
+                    <input type="search" name="Recherche" placeholder="Rechercher (Marche pas)" required/>
                     <SELECT name="TypeRecherche" size="1">
                         <option> Trier par : </option>
                         <option value="Sujet"> Sujet </option>

@@ -56,8 +56,9 @@ class UsersManager
         $sexe = $user->getSexe();
         $ban = 0;
         $pdp = $user->getCheminPhoto();
+        $bio = $user->getBiographie();
         
-        $state = $login->prepare("INSERT INTO Utilisateur (pseudo, password, dateNaissance, mail, sexe, dateInscription, ban, cheminPhoto) VALUES (?, ?, ?, ?, ?, CURDATE(), ?, ?)");
+        $state = $login->prepare("INSERT INTO Utilisateur (pseudo, password, dateNaissance, mail, sexe, dateInscription, ban, cheminPhoto, biographie) VALUES (?, ?, ?, ?, ?, CURDATE(), ?, ?, ?)");
         
         $state->bindParam(1, $pseudo);
         $state->bindParam(2, $password);
@@ -66,6 +67,7 @@ class UsersManager
         $state->bindParam(5, $sexe);
         $state->bindParam(6, $ban);
         $state->bindParam(7, $pdp);
+        $state->bindParam(8, $bio);
         $state->execute();
     }
     

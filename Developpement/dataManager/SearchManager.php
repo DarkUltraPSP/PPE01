@@ -2,11 +2,11 @@
 
 class SearchManager 
 {
-    public static function searchSubject($subjectName)
+    public static function searchSubject($keyword)
     {
         $login = DatabaseLinker::getConnexion();
-        $state = $login->prepare('SELECT * FROM Sujet WHERE nomSujet LIKE "%?%" ORDER BY idSujet DESC');
-        $state->bindParam(1, $subjectName);
+        $state = $login->prepare('SELECT nomSujet FROM Sujet WHERE nomSujet LIKE "%?%" ORDER BY idSujet DESC');
+        $state->bindParam(1, $keyword);
         $state->execute();
         $resultat = $state->fetchAll();
     }

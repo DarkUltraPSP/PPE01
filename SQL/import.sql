@@ -69,11 +69,11 @@ ADD CONSTRAINT Sujet_idType
 FOREIGN KEY (idType)
 REFERENCES TypeSujet (idType);
 
-INSERT INTO Utilisateur (pseudo, password, dateNaissance, cheminPhoto, sexe, mail, ban, isAdmin, dateInscription) VALUES
-("Admin" , "admin",  "2000-12-13", "UserImage/administrateur.png", "Homme", "admin@gmail.com", false, true, "2020-02-01"),
-("Ixoti", "password", "1999-02-17", "UserImage/PDP Berserk.png", "Homme", "Ixoti@gmail.com", false, false, "2020-02-01"),
-("Ogur", "password", "1998-03-17" ,"UserImage/user.png", "Homme", "Ogur@gmail.com", false, false, "2020-02-01"),
-("Nero", "Nero", "2001-02-15", "UserImage/Gally.jpg", "Homme", "Nero@gmail.com", false, true, "2020-01-01");
+INSERT INTO Utilisateur (pseudo, password, dateNaissance, cheminPhoto, sexe, mail, ban, isAdmin, dateInscription, biographie) VALUES
+("Admin" , "admin",  "2000-12-13", "UserImage/administrateur.png", "Homme", "admin@gmail.com", false, true, "2020-02-01", "Administrateur du forum"),
+("Ixoti", "password", "1999-02-17", "UserImage/PDP Berserk.png", "Homme", "Ixoti@gmail.com", false, false, "2020-02-01","Compte testeur"),
+("Ogur", "password", "1998-03-17" ,"UserImage/user.png", "Homme", "Ogur@gmail.com", false, false, "2020-02-01","Compte testeur"),
+("Nero", "Nero", "2001-02-15", "UserImage/Gally.jpg", "Homme", "Nero@gmail.com", false, true, "2020-01-01","Createur du forum");
 
 INSERT INTO Sujet (nomSujet, contenuSujet, canRespond, dateSujet, idUtilisateur, idType) VALUES
 ("Y a t-il de bonne ou de mauvaises situations ?", "Vous savez, moi je ne crois pas qu'il y ait de bonnes ou de mauvaises situations. Moi si je devais résumer ma vie, aujourd'hui, avec vous, je dirais que c'est d'abord des rencontres, des gens qui m'ont tendu la main, peut-être à un moment où je ne pouvais pas, où j'étais seul chez moi, et c'est assez curieux de se dire que les hasards, les rencontres forgent une destinée, parce que quand on a le goût de la chose, quand on a le goût de la chose bien faite, le beau geste, parfois on ne trouve pas l'interlocuteur en face, je dirais le miroir qui vous aide à avancer ; alors ce n'est pas mon cas comme je le disais là, puisque moi au contraire j'ai pu et je dis merci à la vie, je lui dis merci, je chante la vie, je danse la vie, je ne suis qu'amour, et finalement quand beaucoup de gens aujourd'hui me disent : Mais comment fais-tu pour avoir cette humanité ? Et bah je leur réponds très simplement, je leur dis : c'est ce goût de l'amour, ce goût donc qui m'a poussé, aujourd'hui, à entreprendre une construction mécanique mais demain, qui sait, peut-être, simplement à me mettre au service de la communauté, à faire le don, le don de soi...", 1, "2019-10-30", 3, 1),
