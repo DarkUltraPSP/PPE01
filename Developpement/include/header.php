@@ -90,17 +90,41 @@ if (!empty($_GET["deco"]) && $_GET["deco"] == true)
         </header>
         
         <div class="Recherche">
-            <form method="POST" action="Search.php" class="RechercheCenter">
-                <input type="search" name="Recherche" placeholder="Rechercher" required/>
-                <SELECT name="TypeRecherche" size="1">
-                    <option> Trier par : </option>
-                    <option value="Sujet"> Sujet </option>
-                    <option value="Auteur"> Auteur </option>
-                    <option value="Message"> Message </option>
-                </SELECT>
-            <input type="submit" value="Rechercher">
-            </form>
-            <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
+            <div class="bar">
+                <form method="POST" action="Search.php" class="RechercheCenter">
+                    <input type="search" name="Recherche" placeholder="Rechercher" required/>
+                    <SELECT name="TypeRecherche" size="1">
+                        <option> Trier par : </option>
+                        <option value="Sujet"> Sujet </option>
+                        <option value="Auteur"> Auteur </option>
+                        <option value="Message"> Message </option>
+                    </SELECT>
+                <input type="submit" value="Rechercher">
+                </form>
+            </div>
+            <div class="allSujet">
+                <a href="AllSujets.php" class="RechercheCenter"/> Tous les sujets </a>
+            </div>
+            <?php
+            if (!isset($page))
+            {
+                ?>
+        <div class="type">
+                <?php
+                foreach ($types as $type)
+                {
+                ?>
+                <form method="GET" action="SujetsType.php">
+                    <input type="hidden" value="<?php echo $type->getIdType(); ?>" name="idType">
+                    <input class="btn" type="submit" value="<?php echo $type->getLibelle(); ?>" name="libelle">
+                </form>
+            
+                <?php
+                }
+                ?>
+        </div>
+            <?php 
+            }?>
         </div>
         
         <div class="Orga">
